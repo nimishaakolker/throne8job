@@ -1,0 +1,156 @@
+'use client'
+import { useJobs } from '@/hooks/useJobs'
+import { CATEGORIES } from '@/lib/mockData'
+import { JobType, ExperienceLevel, WorkMode, SectionView } from '@/types/jobs'
+
+const JOB_TYPES: { value: JobType; label: string }[] = [
+  { value: 'full-time',  label: 'Full-time'  },
+  { value: 'part-time',  label: 'Part-time'  },
+  { value: 'freelance',  label: 'Freelance'  },
+  { value: 'internship', label: 'Internship' },
+]
+
+const EXPERIENCE_LEVELS: { value: ExperienceLevel; label: string }[] = [
+  { value: 'entry',     label: 'Entry Level' },
+  { value: 'mid',       label: 'Mid Level'   },
+  { value: 'senior',    label: 'Senior'      },
+
+
+]
+
+const WORK_MODES: { value: WorkMode; label: string; dot: string }[] = [
+  { value: 'remote', label: 'Remote',  dot: 'bg-emerald-500' },
+  { value: 'hybrid', label: 'Hybrid',  dot: 'bg-amber-500'   },
+  { value: 'onsite', label: 'On-site', dot: 'bg-rose-500'    },
+]
+
+const NAV_ITEMS: { id: SectionView; label: string; icon: string }[] = [
+  { id: 'recommended', label: 'Recommended', icon: '✦' },
+  { id: 'recent',      label: 'Recent',      icon: '◷' },
+  { id: 'saved',       label: 'Saved Jobs',  icon: '◈' },
+  { id: 'applied',     label: 'Applied',     icon: '◉' },
+]
+
+function Checkbox({ label, checked, onChange, dot }: {
+  label: string; checked: boolean; onChange: () => void; dot?: string
+}) {
+  return (
+    <button
+      onClick={onChange}
+      className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-left transition-colors
+        ${checked ? 'bg-[#4a3728]/[0.07] text-[#4a3728]' : 'text-[#6b5847] hover:text-[#4a3728] hover:bg-[#e0d8cf]/40'}`}
+    >
+      <div className={`w-4 h-4 rounded border flex items-center justify-center shrink-0 transition-colors
+        ${checked ? 'bg-[#4a3728] border-[#4a3728]' : 'bg-white border-[#d4c4b5]'}`}>
+        {checked && (
+          <svg className="w-2.5 h-2.5 text-[#e0d8cf]" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+        )}
+      </div>
+      {dot && <span className={`w-2 h-2 rounded-full shrink-0 ${dot}`} />}
+      <span className="text-sm font-medium">{label}</span>
+    </button>
+  )
+}
+
+function Section({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div className="py-4 border-b border-[#e8ddd4] last:border-0">
+      <p className="text-[10px] font-bold tracking-widest text-[#6b5847] uppercase mb-2 px-1">{title}</p>
+      <div className="space-y-0.5">{children}</div>
+    </div>
+  )
+}
+
+export function FilterSidebar() {
+  const {
+    filters, activeFilterCount, savedCount, appliedCount, activeSection,
+    handleToggleType, handleToggleExp, handleToggleWorkMode,
+    handleToggleCategory, handleClearFilters, handleSetSection,
+  } = useJobs()
+
+  return (
+    <aside className="w-60 shrink-0 sticky top-20 h-fit">
+      <div className="bg-white border border-[#d4c4b5] rounded-2xl overflow-hidden shadow-sm">
+
+        <div className="px-4 py-3.5 border-b border-[#e8ddd4] flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <svg className="w-4 h-4 text-[#4a3728]" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2a1 1 0 01-.293.707L13 13.414V19a1 1 0 01-.553.894l-4 2A1 1 0 017 21v-7.586L3.293 6.707A1 1 0 013 6V4z" />
+            </svg>
+            <span className="text-sm font-bold text-[#4a3728]">Filters</span>
+            {activeFilterCount > 0 && (
+              <span className="w-5 h-5 rounded-full bg-[#4a3728] text-[#e0d8cf] text-[10px] font-bold flex items-center justify-center">
+                {activeFilterCount}
+              </span>
+            )}
+          </div>
+          {activeFilterCount > 0 && (
+            <button onClick={handleClearFilters} className="text-xs text-[#6b5847] hover:text-[#4a3728] transition-colors font-medium">
+              Clear all
+            </button>
+          )}
+        </div>
+
+        <div className="px-2 overflow-y-auto max-h-[calc(100vh-200px)]">
+          <div className="py-3 border-b border-[#e8ddd4] space-y-0.5">
+            {NAV_ITEMS.map(({ id, label, icon }) => {
+              const count  = id === 'saved' ? savedCount : id === 'applied' ? appliedCount : null
+              const active = activeSection === id
+              return (
+                <button key={id} onClick={() => handleSetSection(id)}
+                  className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium transition-colors
+                    ${active ? 'bg-[#4a3728] text-[#e0d8cf]' : 'text-[#6b5847] hover:text-[#4a3728] hover:bg-[#e0d8cf]/40'}`}
+                >
+                  <span className="flex items-center gap-2">
+                    <span className="text-xs opacity-60">{icon}</span>
+                    {label}
+                  </span>
+                  {count !== null && count > 0 && (
+                    <span className={`text-xs px-1.5 py-0.5 rounded-full font-bold
+                      ${active ? 'bg-white/20 text-[#e0d8cf]' : 'bg-[#e0d8cf] text-[#4a3728]'}`}>
+                      {count}
+                    </span>
+                  )}
+                </button>
+              )
+            })}
+          </div>
+
+          <Section title="Work Mode">
+            {WORK_MODES.map((m) => (
+              <Checkbox key={m.value} label={m.label} dot={m.dot}
+                checked={filters.workMode.includes(m.value)}
+                onChange={() => handleToggleWorkMode(m.value)} />
+            ))}
+          </Section>
+
+          <Section title="Job Type">
+            {JOB_TYPES.map((t) => (
+              <Checkbox key={t.value} label={t.label}
+                checked={filters.types.includes(t.value)}
+                onChange={() => handleToggleType(t.value)} />
+            ))}
+          </Section>
+
+          <Section title="Experience">
+            {EXPERIENCE_LEVELS.map((e) => (
+              <Checkbox key={e.value} label={e.label}
+                checked={filters.experience.includes(e.value)}
+                onChange={() => handleToggleExp(e.value)} />
+            ))}
+          </Section>
+
+          <Section title="Category">
+            {CATEGORIES.map((c) => (
+              <Checkbox key={c} label={c}
+                checked={filters.categories.includes(c)}
+                onChange={() => handleToggleCategory(c)} />
+            ))}
+          </Section>
+        </div>
+      </div>
+    </aside>
+  )
+}

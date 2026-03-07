@@ -1,0 +1,2230 @@
+module.exports = [
+"[externals]/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js [external] (next/dist/compiled/next-server/app-page-turbo.runtime.dev.js, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("next/dist/compiled/next-server/app-page-turbo.runtime.dev.js", () => require("next/dist/compiled/next-server/app-page-turbo.runtime.dev.js"));
+
+module.exports = mod;
+}),
+"[project]/src/lib/mockData.ts [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "CATEGORIES",
+    ()=>CATEGORIES,
+    "MOCK_JOBS",
+    ()=>MOCK_JOBS
+]);
+const MOCK_JOBS = [
+    {
+        id: '1',
+        title: 'Senior Product Designer',
+        company: 'Throne8',
+        companyLogo: 'T8',
+        location: 'San Francisco, CA',
+        salary: {
+            min: 130000,
+            max: 180000,
+            currency: 'USD'
+        },
+        type: 'full-time',
+        experience: 'senior',
+        workMode: 'hybrid',
+        tags: [
+            'Figma',
+            'Design Systems',
+            'User Research',
+            'Prototyping'
+        ],
+        description: `We're building the future of digital commerce and need a visionary designer to lead our product experience. You'll shape interfaces used by millions, working at the intersection of art and technology.`,
+        responsibilities: [
+            'Lead end-to-end design for core product features',
+            'Build and maintain our design system',
+            'Collaborate with engineers and PMs in fast-paced sprints',
+            'Conduct user research and usability testing',
+            'Mentor junior designers'
+        ],
+        requirements: [
+            '5+ years of product design experience',
+            'Expert-level Figma proficiency',
+            'Strong portfolio demonstrating complex problem solving',
+            'Experience with design systems at scale'
+        ],
+        benefits: [
+            'Equity package',
+            'Remote flexibility',
+            '$5k equipment budget',
+            'Health, dental, vision',
+            'Unlimited PTO'
+        ],
+        postedAt: '2025-03-01',
+        deadline: '2025-04-15',
+        applicants: 142,
+        featured: true,
+        category: 'Design'
+    },
+    {
+        id: '2',
+        title: 'Staff Software Engineer',
+        company: 'Nexus Labs',
+        companyLogo: 'NL',
+        location: 'New York, NY',
+        salary: {
+            min: 200000,
+            max: 280000,
+            currency: 'USD'
+        },
+        type: 'full-time',
+        experience: 'lead',
+        workMode: 'remote',
+        tags: [
+            'TypeScript',
+            'React',
+            'Node.js',
+            'AWS',
+            'GraphQL'
+        ],
+        description: `Join our elite engineering team building distributed systems that process billions of events daily. You'll architect solutions that define how the next generation of commerce works.`,
+        responsibilities: [
+            'Architect and implement scalable backend services',
+            'Drive technical roadmap and standards',
+            'Lead cross-functional engineering initiatives',
+            'Mentor engineers across multiple teams'
+        ],
+        requirements: [
+            '8+ years software engineering experience',
+            'Deep expertise in distributed systems',
+            'Strong TypeScript and React skills',
+            'Experience leading technical teams'
+        ],
+        benefits: [
+            'Top-tier equity',
+            'Full remote',
+            '$10k learning budget',
+            'Comprehensive health',
+            '401k matching'
+        ],
+        postedAt: '2025-03-03',
+        deadline: '2025-04-20',
+        applicants: 89,
+        featured: true,
+        category: 'Engineering'
+    },
+    {
+        id: '3',
+        title: 'Growth Marketing Lead',
+        company: 'Orbit',
+        companyLogo: 'OR',
+        location: 'Austin, TX',
+        salary: {
+            min: 95000,
+            max: 135000,
+            currency: 'USD'
+        },
+        type: 'full-time',
+        experience: 'mid',
+        workMode: 'hybrid',
+        tags: [
+            'SEO',
+            'Paid Ads',
+            'Analytics',
+            'A/B Testing',
+            'Email Marketing'
+        ],
+        description: `Scale Orbit's user acquisition engine from 100k to 1M users. You'll own the full funnel, run experiments relentlessly, and build a data-driven marketing machine.`,
+        responsibilities: [
+            'Own user acquisition across all channels',
+            'Run growth experiments and document learnings',
+            'Build performance dashboards and reports',
+            'Manage $2M+ annual marketing budget'
+        ],
+        requirements: [
+            '4+ years growth marketing experience',
+            'Proven track record scaling user growth',
+            'Strong analytical and SQL skills',
+            'Experience with major ad platforms'
+        ],
+        benefits: [
+            'Performance bonuses',
+            'Flexible PTO',
+            'Remote Fridays',
+            'Health benefits',
+            'Team retreats'
+        ],
+        postedAt: '2025-03-04',
+        deadline: '2025-04-10',
+        applicants: 203,
+        featured: false,
+        category: 'Marketing'
+    },
+    {
+        id: '4',
+        title: 'AI/ML Research Engineer',
+        company: 'Deepmind Collective',
+        companyLogo: 'DC',
+        location: 'Seattle, WA',
+        salary: {
+            min: 180000,
+            max: 260000,
+            currency: 'USD'
+        },
+        type: 'full-time',
+        experience: 'senior',
+        workMode: 'onsite',
+        tags: [
+            'Python',
+            'PyTorch',
+            'LLMs',
+            'MLOps',
+            'CUDA'
+        ],
+        description: `Push the boundaries of what's possible with AI. Work on frontier models, novel architectures, and deploy systems that define the cutting edge of machine intelligence.`,
+        responsibilities: [
+            'Research and implement novel ML architectures',
+            'Scale training pipelines to thousands of GPUs',
+            'Publish research and represent at conferences',
+            'Collaborate with product to ship AI features'
+        ],
+        requirements: [
+            'PhD or equivalent experience in ML/CS',
+            'Deep expertise in PyTorch',
+            'Published research record preferred',
+            'Experience with large-scale distributed training'
+        ],
+        benefits: [
+            'Research budget',
+            'Conference attendance',
+            'PhD stipend support',
+            'Top-tier equity',
+            'Onsite meals'
+        ],
+        postedAt: '2025-02-28',
+        deadline: '2025-04-30',
+        applicants: 67,
+        featured: true,
+        category: 'Engineering'
+    },
+    {
+        id: '5',
+        title: 'Head of Product',
+        company: 'Forma',
+        companyLogo: 'FM',
+        location: 'Los Angeles, CA',
+        salary: {
+            min: 175000,
+            max: 230000,
+            currency: 'USD'
+        },
+        type: 'full-time',
+        experience: 'executive',
+        workMode: 'hybrid',
+        tags: [
+            'Product Strategy',
+            'Roadmapping',
+            'OKRs',
+            'Agile',
+            'B2B SaaS'
+        ],
+        description: `Define the product vision for Forma's B2B SaaS platform. Lead a team of 12 PMs, work directly with our CEO, and shape the future of workplace experience software.`,
+        responsibilities: [
+            'Own product vision, strategy and roadmap',
+            'Lead and grow a team of 12 product managers',
+            'Work with engineering on technical strategy',
+            'Present to board and major customers'
+        ],
+        requirements: [
+            '10+ years product management experience',
+            'Experience leading large PM teams',
+            'Deep B2B SaaS expertise',
+            'Track record of 0-to-1 and 1-to-n products'
+        ],
+        benefits: [
+            'Executive equity',
+            'Board exposure',
+            'Relocation assistance',
+            'Premium health',
+            'Company car'
+        ],
+        postedAt: '2025-03-05',
+        deadline: '2025-05-01',
+        applicants: 44,
+        featured: false,
+        category: 'Product'
+    },
+    {
+        id: '6',
+        title: 'Frontend Engineer',
+        company: 'Pulse',
+        companyLogo: 'PL',
+        location: 'Remote',
+        salary: {
+            min: 110000,
+            max: 155000,
+            currency: 'USD'
+        },
+        type: 'full-time',
+        experience: 'mid',
+        workMode: 'remote',
+        tags: [
+            'React',
+            'Next.js',
+            'TypeScript',
+            'Tailwind',
+            'WebGL'
+        ],
+        description: `Build beautiful, performant interfaces for Pulse's real-time analytics platform. You'll push the web to its limits with data visualizations and 60fps interactions.`,
+        responsibilities: [
+            'Build and maintain React component library',
+            'Implement complex data visualizations with D3/WebGL',
+            'Optimize Core Web Vitals and performance',
+            'Collaborate closely with designers'
+        ],
+        requirements: [
+            '4+ years React experience',
+            'Expert TypeScript skills',
+            'Experience with data visualization libraries',
+            'Strong eye for design and UX'
+        ],
+        benefits: [
+            'Full remote',
+            'Home office stipend',
+            'Open source time',
+            'Health benefits',
+            'Flexible hours'
+        ],
+        postedAt: '2025-03-06',
+        deadline: '2025-04-25',
+        applicants: 178,
+        featured: false,
+        category: 'Engineering'
+    },
+    {
+        id: '7',
+        title: 'Brand Designer',
+        company: 'Luxe Commerce',
+        companyLogo: 'LC',
+        location: 'Miami, FL',
+        salary: {
+            min: 75000,
+            max: 110000,
+            currency: 'USD'
+        },
+        type: 'full-time',
+        experience: 'mid',
+        workMode: 'onsite',
+        tags: [
+            'Brand Identity',
+            'Motion Design',
+            'After Effects',
+            'Illustration',
+            'Print'
+        ],
+        description: `Define the visual identity for one of the fastest-growing luxury e-commerce brands. You'll craft brand experiences across digital, print, and physical spaces.`,
+        responsibilities: [
+            'Own brand identity and visual language',
+            'Create campaigns across all brand touchpoints',
+            'Develop motion graphics and video content',
+            'Collaborate with external creative agencies'
+        ],
+        requirements: [
+            '3+ years brand design experience',
+            'Strong motion design skills',
+            'Luxury brand experience preferred',
+            'Excellent portfolio'
+        ],
+        benefits: [
+            'Employee discounts',
+            'Creative budget',
+            'Health benefits',
+            'Miami office perks',
+            'Team events'
+        ],
+        postedAt: '2025-03-02',
+        deadline: '2025-04-12',
+        applicants: 312,
+        featured: false,
+        category: 'Design'
+    },
+    {
+        id: '8',
+        title: 'DevOps / Platform Engineer',
+        company: 'Strata',
+        companyLogo: 'ST',
+        location: 'Chicago, IL',
+        salary: {
+            min: 130000,
+            max: 170000,
+            currency: 'USD'
+        },
+        type: 'full-time',
+        experience: 'senior',
+        workMode: 'hybrid',
+        tags: [
+            'Kubernetes',
+            'Terraform',
+            'AWS',
+            'CI/CD',
+            'Go'
+        ],
+        description: `Build and scale the infrastructure backbone powering Strata's financial data platform. You'll design systems that guarantee 99.999% uptime for critical financial operations.`,
+        responsibilities: [
+            'Design and manage Kubernetes infrastructure',
+            'Build CI/CD pipelines and developer tooling',
+            'Implement security and compliance systems',
+            'On-call rotation for critical systems'
+        ],
+        requirements: [
+            '6+ years DevOps/SRE experience',
+            'Deep Kubernetes expertise',
+            'Strong Terraform and IaC skills',
+            'Financial services experience a plus'
+        ],
+        benefits: [
+            'On-call pay',
+            'Certification budget',
+            'Health benefits',
+            'Hybrid schedule',
+            'Strong 401k'
+        ],
+        postedAt: '2025-03-01',
+        deadline: '2025-04-20',
+        applicants: 56,
+        featured: false,
+        category: 'Engineering'
+    }
+];
+const CATEGORIES = [
+    'Engineering',
+    'Design',
+    'Product',
+    'Marketing',
+    'Sales',
+    'Operations',
+    'Finance',
+    'HR'
+];
+}),
+"[project]/src/store/slices/jobsSlice.ts [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "applyToJob",
+    ()=>applyToJob,
+    "clearFilters",
+    ()=>clearFilters,
+    "default",
+    ()=>__TURBOPACK__default__export__,
+    "selectActiveSection",
+    ()=>selectActiveSection,
+    "selectAllJobs",
+    ()=>selectAllJobs,
+    "selectAppliedJobObjects",
+    ()=>selectAppliedJobObjects,
+    "selectAppliedJobs",
+    ()=>selectAppliedJobs,
+    "selectFeaturedJobs",
+    ()=>selectFeaturedJobs,
+    "selectFilteredJobs",
+    ()=>selectFilteredJobs,
+    "selectFilters",
+    ()=>selectFilters,
+    "selectJobById",
+    ()=>selectJobById,
+    "selectRecentJobs",
+    ()=>selectRecentJobs,
+    "selectSavedJobObjects",
+    ()=>selectSavedJobObjects,
+    "selectSavedJobs",
+    ()=>selectSavedJobs,
+    "setActiveSection",
+    ()=>setActiveSection,
+    "setLocation",
+    ()=>setLocation,
+    "setSalaryRange",
+    ()=>setSalaryRange,
+    "setSearch",
+    ()=>setSearch,
+    "toggleFilterCategory",
+    ()=>toggleFilterCategory,
+    "toggleFilterExperience",
+    ()=>toggleFilterExperience,
+    "toggleFilterType",
+    ()=>toggleFilterType,
+    "toggleFilterWorkMode",
+    ()=>toggleFilterWorkMode,
+    "toggleSaveJob",
+    ()=>toggleSaveJob
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/@reduxjs/toolkit/dist/redux-toolkit.modern.mjs [app-ssr] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$reselect$2f$dist$2f$reselect$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/reselect/dist/reselect.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$mockData$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/mockData.ts [app-ssr] (ecmascript)");
+;
+;
+const defaultFilters = {
+    search: '',
+    types: [],
+    experience: [],
+    workMode: [],
+    categories: [],
+    salaryMin: 0,
+    salaryMax: 500000,
+    location: ''
+};
+const initialState = {
+    jobs: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$mockData$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["MOCK_JOBS"],
+    filteredJobs: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$mockData$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["MOCK_JOBS"],
+    savedJobs: [],
+    appliedJobs: [],
+    filters: defaultFilters,
+    activeSection: 'recommended',
+    loading: false,
+    error: null
+};
+function applyFilters(jobs, filters) {
+    return jobs.filter((job)=>{
+        if (filters.search) {
+            const q = filters.search.toLowerCase();
+            const matches = job.title.toLowerCase().includes(q) || job.company.toLowerCase().includes(q) || job.tags.some((t)=>t.toLowerCase().includes(q)) || job.location.toLowerCase().includes(q);
+            if (!matches) return false;
+        }
+        if (filters.types.length && !filters.types.includes(job.type)) return false;
+        if (filters.experience.length && !filters.experience.includes(job.experience)) return false;
+        if (filters.workMode.length && !filters.workMode.includes(job.workMode)) return false;
+        if (filters.categories.length && !filters.categories.includes(job.category)) return false;
+        if (job.salary.min < filters.salaryMin || job.salary.max > filters.salaryMax) return false;
+        if (filters.location) {
+            if (!job.location.toLowerCase().includes(filters.location.toLowerCase())) return false;
+        }
+        return true;
+    });
+}
+const jobsSlice = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createSlice"])({
+    name: 'jobs',
+    initialState,
+    reducers: {
+        setSearch (state, action) {
+            state.filters.search = action.payload;
+            state.filteredJobs = applyFilters(state.jobs, state.filters);
+        },
+        toggleFilterType (state, action) {
+            const idx = state.filters.types.indexOf(action.payload);
+            if (idx >= 0) state.filters.types.splice(idx, 1);
+            else state.filters.types.push(action.payload);
+            state.filteredJobs = applyFilters(state.jobs, state.filters);
+        },
+        toggleFilterExperience (state, action) {
+            const idx = state.filters.experience.indexOf(action.payload);
+            if (idx >= 0) state.filters.experience.splice(idx, 1);
+            else state.filters.experience.push(action.payload);
+            state.filteredJobs = applyFilters(state.jobs, state.filters);
+        },
+        toggleFilterWorkMode (state, action) {
+            const idx = state.filters.workMode.indexOf(action.payload);
+            if (idx >= 0) state.filters.workMode.splice(idx, 1);
+            else state.filters.workMode.push(action.payload);
+            state.filteredJobs = applyFilters(state.jobs, state.filters);
+        },
+        toggleFilterCategory (state, action) {
+            const idx = state.filters.categories.indexOf(action.payload);
+            if (idx >= 0) state.filters.categories.splice(idx, 1);
+            else state.filters.categories.push(action.payload);
+            state.filteredJobs = applyFilters(state.jobs, state.filters);
+        },
+        setSalaryRange (state, action) {
+            state.filters.salaryMin = action.payload.min;
+            state.filters.salaryMax = action.payload.max;
+            state.filteredJobs = applyFilters(state.jobs, state.filters);
+        },
+        setLocation (state, action) {
+            state.filters.location = action.payload;
+            state.filteredJobs = applyFilters(state.jobs, state.filters);
+        },
+        clearFilters (state) {
+            state.filters = defaultFilters;
+            state.filteredJobs = state.jobs;
+        },
+        toggleSaveJob (state, action) {
+            const idx = state.savedJobs.indexOf(action.payload);
+            if (idx >= 0) state.savedJobs.splice(idx, 1);
+            else state.savedJobs.push(action.payload);
+        },
+        applyToJob (state, action) {
+            if (!state.appliedJobs.includes(action.payload)) {
+                state.appliedJobs.push(action.payload);
+            }
+        },
+        setActiveSection (state, action) {
+            state.activeSection = action.payload;
+        }
+    }
+});
+const { setSearch, toggleFilterType, toggleFilterExperience, toggleFilterWorkMode, toggleFilterCategory, setSalaryRange, setLocation, clearFilters, toggleSaveJob, applyToJob, setActiveSection } = jobsSlice.actions;
+const __TURBOPACK__default__export__ = jobsSlice.reducer;
+const selectAllJobs = (state)=>state.jobs.jobs;
+const selectFilteredJobs = (state)=>state.jobs.filteredJobs;
+const selectFilters = (state)=>state.jobs.filters;
+const selectSavedJobs = (state)=>state.jobs.savedJobs;
+const selectAppliedJobs = (state)=>state.jobs.appliedJobs;
+const selectActiveSection = (state)=>state.jobs.activeSection;
+const selectFeaturedJobs = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$reselect$2f$dist$2f$reselect$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createSelector"])(selectAllJobs, (jobs)=>jobs.filter((j)=>j.featured));
+const selectRecentJobs = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$reselect$2f$dist$2f$reselect$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createSelector"])(selectAllJobs, (jobs)=>[
+        ...jobs
+    ].sort((a, b)=>new Date(b.postedAt).getTime() - new Date(a.postedAt).getTime()).slice(0, 6));
+const selectSavedJobObjects = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$reselect$2f$dist$2f$reselect$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createSelector"])(selectAllJobs, selectSavedJobs, (jobs, savedIds)=>jobs.filter((j)=>savedIds.includes(j.id)));
+const selectAppliedJobObjects = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$reselect$2f$dist$2f$reselect$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createSelector"])(selectAllJobs, selectAppliedJobs, (jobs, appliedIds)=>jobs.filter((j)=>appliedIds.includes(j.id)));
+const selectJobById = (id)=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$reselect$2f$dist$2f$reselect$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createSelector"])(selectAllJobs, (jobs)=>jobs.find((j)=>j.id === id));
+}),
+"[project]/src/store/index.ts [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "store",
+    ()=>store,
+    "useAppDispatch",
+    ()=>useAppDispatch,
+    "useAppSelector",
+    ()=>useAppSelector
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/@reduxjs/toolkit/dist/redux-toolkit.modern.mjs [app-ssr] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-redux/dist/react-redux.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$slices$2f$jobsSlice$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/store/slices/jobsSlice.ts [app-ssr] (ecmascript)");
+;
+;
+;
+const store = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["configureStore"])({
+    reducer: {
+        jobs: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$slices$2f$jobsSlice$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+    },
+    devTools: ("TURBOPACK compile-time value", "development") !== 'production'
+});
+const useAppDispatch = ()=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useDispatch"])();
+const useAppSelector = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSelector"];
+}),
+"[project]/src/hooks/useJobs.ts [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "useJobs",
+    ()=>useJobs
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$index$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/store/index.ts [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$slices$2f$jobsSlice$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/store/slices/jobsSlice.ts [app-ssr] (ecmascript)");
+;
+;
+;
+function useJobs() {
+    const dispatch = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$index$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useAppDispatch"])();
+    const filteredJobs = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$index$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useAppSelector"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$slices$2f$jobsSlice$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["selectFilteredJobs"]);
+    const featuredJobs = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$index$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useAppSelector"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$slices$2f$jobsSlice$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["selectFeaturedJobs"]);
+    const recentJobs = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$index$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useAppSelector"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$slices$2f$jobsSlice$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["selectRecentJobs"]);
+    const filters = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$index$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useAppSelector"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$slices$2f$jobsSlice$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["selectFilters"]);
+    const savedJobIds = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$index$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useAppSelector"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$slices$2f$jobsSlice$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["selectSavedJobs"]);
+    const appliedJobIds = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$index$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useAppSelector"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$slices$2f$jobsSlice$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["selectAppliedJobs"]);
+    const savedJobObjects = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$index$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useAppSelector"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$slices$2f$jobsSlice$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["selectSavedJobObjects"]);
+    const appliedJobObjects = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$index$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useAppSelector"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$slices$2f$jobsSlice$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["selectAppliedJobObjects"]);
+    const activeSection = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$index$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useAppSelector"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$slices$2f$jobsSlice$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["selectActiveSection"]);
+    const handleSearch = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])((q)=>dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$slices$2f$jobsSlice$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["setSearch"])(q)), [
+        dispatch
+    ]);
+    const handleToggleType = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])((t)=>dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$slices$2f$jobsSlice$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toggleFilterType"])(t)), [
+        dispatch
+    ]);
+    const handleToggleExperience = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])((e)=>dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$slices$2f$jobsSlice$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toggleFilterExperience"])(e)), [
+        dispatch
+    ]);
+    const handleToggleWorkMode = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])((m)=>dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$slices$2f$jobsSlice$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toggleFilterWorkMode"])(m)), [
+        dispatch
+    ]);
+    const handleToggleCategory = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])((c)=>dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$slices$2f$jobsSlice$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toggleFilterCategory"])(c)), [
+        dispatch
+    ]);
+    const handleSalaryRange = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])((min, max)=>dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$slices$2f$jobsSlice$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["setSalaryRange"])({
+            min,
+            max
+        })), [
+        dispatch
+    ]);
+    const handleLocation = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])((loc)=>dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$slices$2f$jobsSlice$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["setLocation"])(loc)), [
+        dispatch
+    ]);
+    const handleClearFilters = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])(()=>dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$slices$2f$jobsSlice$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["clearFilters"])()), [
+        dispatch
+    ]);
+    const handleToggleSave = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])((id)=>dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$slices$2f$jobsSlice$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toggleSaveJob"])(id)), [
+        dispatch
+    ]);
+    const handleApply = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])((id)=>dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$slices$2f$jobsSlice$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["applyToJob"])(id)), [
+        dispatch
+    ]);
+    const handleSetSection = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])((s)=>dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$slices$2f$jobsSlice$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["setActiveSection"])(s)), [
+        dispatch
+    ]);
+    const isJobSaved = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])((id)=>savedJobIds.includes(id), [
+        savedJobIds
+    ]);
+    const isJobApplied = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])((id)=>appliedJobIds.includes(id), [
+        appliedJobIds
+    ]);
+    const activeFilterCount = filters.types.length + filters.experience.length + filters.workMode.length + filters.categories.length + (filters.location ? 1 : 0);
+    return {
+        filteredJobs,
+        featuredJobs,
+        recentJobs,
+        filters,
+        savedJobObjects,
+        appliedJobObjects,
+        activeSection,
+        activeFilterCount,
+        isJobSaved,
+        isJobApplied,
+        savedCount: savedJobIds.length,
+        appliedCount: appliedJobIds.length,
+        handleSearch,
+        handleToggleType,
+        handleToggleExperience,
+        handleToggleWorkMode,
+        handleToggleCategory,
+        handleSalaryRange,
+        handleLocation,
+        handleClearFilters,
+        handleToggleSave,
+        handleApply,
+        handleSetSection
+    };
+}
+}),
+"[project]/src/hooks/useDebounce.ts [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "useDebounce",
+    ()=>useDebounce
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+;
+function useDebounce(fn, delay) {
+    const timer = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])((...args)=>{
+        if (timer.current) clearTimeout(timer.current);
+        timer.current = setTimeout(()=>fn(...args), delay);
+    }, [
+        fn,
+        delay
+    ]);
+}
+}),
+"[project]/src/components/jobs/SearchBar.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "SearchBar",
+    ()=>SearchBar
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useJobs$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/hooks/useJobs.ts [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useDebounce$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/hooks/useDebounce.ts [app-ssr] (ecmascript)");
+'use client';
+;
+;
+;
+;
+const POPULAR_SEARCHES = [
+    'Product Designer',
+    'Frontend Engineer',
+    'Remote',
+    'Senior',
+    'Marketing Lead'
+];
+function SearchBar() {
+    const { filters, handleSearch, handleLocation, filteredJobs } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useJobs$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useJobs"])();
+    const [localSearch, setLocalSearch] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(filters.search);
+    const [localLocation, setLocalLocation] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(filters.location);
+    const [focused, setFocused] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const inputRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const debouncedSearch = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useDebounce$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useDebounce"])((val)=>handleSearch(val), 300);
+    const debouncedLocation = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useDebounce$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useDebounce"])((val)=>handleLocation(val), 300);
+    const onSearchChange = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])((e)=>{
+        setLocalSearch(e.target.value);
+        debouncedSearch(e.target.value);
+    }, [
+        debouncedSearch
+    ]);
+    const onLocationChange = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])((e)=>{
+        setLocalLocation(e.target.value);
+        debouncedLocation(e.target.value);
+    }, [
+        debouncedLocation
+    ]);
+    const onPopularClick = (term)=>{
+        setLocalSearch(term);
+        handleSearch(term);
+        setFocused(false);
+        inputRef.current?.blur();
+    };
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: `
+      relative bg-white border rounded-2xl transition-all duration-300 overflow-hidden shadow-sm
+      ${focused ? 'border-[#4a3728]/40 shadow-[0_4px_32px_rgba(74,55,40,0.12)]' : 'border-[#d4c4b5]'}
+    `,
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute inset-0 bg-gradient-to-br from-[#e0d8cf]/20 via-transparent to-transparent pointer-events-none"
+            }, void 0, false, {
+                fileName: "[project]/src/components/jobs/SearchBar.tsx",
+                lineNumber: 40,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "relative p-5",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "flex flex-col sm:flex-row gap-3",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex-1 flex items-center gap-3 bg-[#f7f3ef] border border-[#d4c4b5] rounded-xl px-4 py-3 hover:border-[#4a3728]/30 focus-within:border-[#4a3728]/50 focus-within:bg-white transition-colors",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                        className: "w-4 h-4 text-[#6b5847] shrink-0",
+                                        fill: "none",
+                                        stroke: "currentColor",
+                                        strokeWidth: 2,
+                                        viewBox: "0 0 24 24",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                            strokeLinecap: "round",
+                                            strokeLinejoin: "round",
+                                            d: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/jobs/SearchBar.tsx",
+                                            lineNumber: 47,
+                                            columnNumber: 15
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/jobs/SearchBar.tsx",
+                                        lineNumber: 46,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                        ref: inputRef,
+                                        type: "text",
+                                        placeholder: "Job title, skill, or company...",
+                                        value: localSearch,
+                                        onChange: onSearchChange,
+                                        onFocus: ()=>setFocused(true),
+                                        onBlur: ()=>setTimeout(()=>setFocused(false), 150),
+                                        className: "flex-1 bg-transparent text-[#4a3728] placeholder:text-[#6b5847]/50 text-sm outline-none font-medium"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/jobs/SearchBar.tsx",
+                                        lineNumber: 49,
+                                        columnNumber: 13
+                                    }, this),
+                                    localSearch && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        onClick: ()=>{
+                                            setLocalSearch('');
+                                            handleSearch('');
+                                        },
+                                        className: "text-[#6b5847] hover:text-[#4a3728] transition-colors",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                            className: "w-4 h-4",
+                                            fill: "none",
+                                            stroke: "currentColor",
+                                            strokeWidth: 2,
+                                            viewBox: "0 0 24 24",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                                strokeLinecap: "round",
+                                                strokeLinejoin: "round",
+                                                d: "M6 18L18 6M6 6l12 12"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/jobs/SearchBar.tsx",
+                                                lineNumber: 63,
+                                                columnNumber: 19
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/jobs/SearchBar.tsx",
+                                            lineNumber: 62,
+                                            columnNumber: 17
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/jobs/SearchBar.tsx",
+                                        lineNumber: 60,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/components/jobs/SearchBar.tsx",
+                                lineNumber: 44,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "sm:w-48 flex items-center gap-3 bg-[#f7f3ef] border border-[#d4c4b5] rounded-xl px-4 py-3 hover:border-[#4a3728]/30 focus-within:border-[#4a3728]/50 focus-within:bg-white transition-colors",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                        className: "w-4 h-4 text-[#6b5847] shrink-0",
+                                        fill: "none",
+                                        stroke: "currentColor",
+                                        strokeWidth: 2,
+                                        viewBox: "0 0 24 24",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                                strokeLinecap: "round",
+                                                strokeLinejoin: "round",
+                                                d: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/jobs/SearchBar.tsx",
+                                                lineNumber: 72,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                                strokeLinecap: "round",
+                                                strokeLinejoin: "round",
+                                                d: "M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/jobs/SearchBar.tsx",
+                                                lineNumber: 73,
+                                                columnNumber: 15
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/components/jobs/SearchBar.tsx",
+                                        lineNumber: 71,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                        type: "text",
+                                        placeholder: "Location...",
+                                        value: localLocation,
+                                        onChange: onLocationChange,
+                                        className: "flex-1 bg-transparent text-[#4a3728] placeholder:text-[#6b5847]/50 text-sm outline-none font-medium"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/jobs/SearchBar.tsx",
+                                        lineNumber: 75,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/components/jobs/SearchBar.tsx",
+                                lineNumber: 69,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                className: "px-7 py-3 bg-[#4a3728] hover:bg-[#3a2a1e] text-[#e0d8cf] text-sm font-bold rounded-xl transition-all duration-200 active:scale-[0.98] shrink-0 shadow-sm",
+                                children: "Search"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/jobs/SearchBar.tsx",
+                                lineNumber: 84,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/components/jobs/SearchBar.tsx",
+                        lineNumber: 43,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mt-3.5 flex items-center justify-between",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "text-sm text-[#6b5847]",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-[#4a3728] font-bold",
+                                        children: filteredJobs.length
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/jobs/SearchBar.tsx",
+                                        lineNumber: 92,
+                                        columnNumber: 13
+                                    }, this),
+                                    " positions available"
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/components/jobs/SearchBar.tsx",
+                                lineNumber: 91,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex items-center gap-2",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "text-xs text-[#6b5847]/60",
+                                        children: "Popular:"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/jobs/SearchBar.tsx",
+                                        lineNumber: 95,
+                                        columnNumber: 13
+                                    }, this),
+                                    POPULAR_SEARCHES.slice(0, 3).map((term)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                            onClick: ()=>onPopularClick(term),
+                                            className: "text-xs px-2.5 py-1 rounded-lg bg-[#f7f3ef] border border-[#d4c4b5] text-[#6b5847] hover:text-[#4a3728] hover:border-[#4a3728]/30 hover:bg-[#e0d8cf]/40 transition-all font-medium",
+                                            children: term
+                                        }, term, false, {
+                                            fileName: "[project]/src/components/jobs/SearchBar.tsx",
+                                            lineNumber: 97,
+                                            columnNumber: 15
+                                        }, this))
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/components/jobs/SearchBar.tsx",
+                                lineNumber: 94,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/components/jobs/SearchBar.tsx",
+                        lineNumber: 90,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/components/jobs/SearchBar.tsx",
+                lineNumber: 42,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/src/components/jobs/SearchBar.tsx",
+        lineNumber: 36,
+        columnNumber: 5
+    }, this);
+}
+}),
+"[project]/src/components/jobs/FilterSidebar.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "FilterSidebar",
+    ()=>FilterSidebar
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useJobs$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/hooks/useJobs.ts [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$mockData$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/mockData.ts [app-ssr] (ecmascript)");
+'use client';
+;
+;
+;
+const JOB_TYPES = [
+    {
+        value: 'full-time',
+        label: 'Full-time'
+    },
+    {
+        value: 'part-time',
+        label: 'Part-time'
+    },
+    {
+        value: 'contract',
+        label: 'Contract'
+    },
+    {
+        value: 'freelance',
+        label: 'Freelance'
+    },
+    {
+        value: 'internship',
+        label: 'Internship'
+    }
+];
+const EXPERIENCE_LEVELS = [
+    {
+        value: 'entry',
+        label: 'Entry Level'
+    },
+    {
+        value: 'mid',
+        label: 'Mid Level'
+    },
+    {
+        value: 'senior',
+        label: 'Senior'
+    },
+    {
+        value: 'lead',
+        label: 'Lead / Staff'
+    },
+    {
+        value: 'executive',
+        label: 'Executive'
+    }
+];
+const WORK_MODES = [
+    {
+        value: 'remote',
+        label: 'Remote',
+        dot: 'bg-emerald-500'
+    },
+    {
+        value: 'hybrid',
+        label: 'Hybrid',
+        dot: 'bg-amber-500'
+    },
+    {
+        value: 'onsite',
+        label: 'On-site',
+        dot: 'bg-rose-500'
+    }
+];
+function FilterCheckbox({ label, checked, onChange, dot }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+        onClick: onChange,
+        className: `w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-left transition-all duration-150
+        ${checked ? 'bg-[#4a3728]/8 text-[#4a3728]' : 'text-[#6b5847] hover:text-[#4a3728] hover:bg-[#e0d8cf]/40'}`,
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: `w-4 h-4 rounded flex items-center justify-center shrink-0 border transition-all
+        ${checked ? 'bg-[#4a3728] border-[#4a3728]' : 'border-[#d4c4b5] bg-white'}`,
+                children: checked && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                    className: "w-2.5 h-2.5 text-[#e0d8cf]",
+                    fill: "none",
+                    stroke: "currentColor",
+                    strokeWidth: 3,
+                    viewBox: "0 0 24 24",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                        strokeLinecap: "round",
+                        strokeLinejoin: "round",
+                        d: "M5 13l4 4L19 7"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+                        lineNumber: 41,
+                        columnNumber: 13
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+                    lineNumber: 40,
+                    columnNumber: 11
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+                lineNumber: 37,
+                columnNumber: 7
+            }, this),
+            dot && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                className: `w-2 h-2 rounded-full ${dot}`
+            }, void 0, false, {
+                fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+                lineNumber: 45,
+                columnNumber: 15
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                className: "text-sm font-medium",
+                children: label
+            }, void 0, false, {
+                fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+                lineNumber: 46,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+        lineNumber: 32,
+        columnNumber: 5
+    }, this);
+}
+function SidebarSection({ title, children }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "py-4 border-b border-[#e8ddd4]",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                className: "text-[10px] font-bold tracking-widest text-[#6b5847] uppercase mb-2 px-1",
+                children: title
+            }, void 0, false, {
+                fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+                lineNumber: 54,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "space-y-0.5",
+                children: children
+            }, void 0, false, {
+                fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+                lineNumber: 55,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+        lineNumber: 53,
+        columnNumber: 5
+    }, this);
+}
+function FilterSidebar() {
+    const { filters, activeFilterCount, savedCount, appliedCount, activeSection, handleToggleType, handleToggleExperience, handleToggleWorkMode, handleToggleCategory, handleClearFilters, handleSetSection } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useJobs$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useJobs"])();
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("aside", {
+        className: "w-60 shrink-0 sticky top-20 h-fit",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "bg-white border border-[#d4c4b5] rounded-2xl overflow-hidden shadow-sm",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "px-4 py-3.5 border-b border-[#e8ddd4] flex items-center justify-between",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex items-center gap-2",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                    className: "w-4 h-4 text-[#4a3728]",
+                                    fill: "none",
+                                    stroke: "currentColor",
+                                    strokeWidth: 2,
+                                    viewBox: "0 0 24 24",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                        strokeLinecap: "round",
+                                        strokeLinejoin: "round",
+                                        d: "M3 4a1 1 0 011-1h16a1 1 0 011 1v2a1 1 0 01-.293.707L13 13.414V19a1 1 0 01-.553.894l-4 2A1 1 0 017 21v-7.586L3.293 6.707A1 1 0 013 6V4z"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+                                        lineNumber: 73,
+                                        columnNumber: 15
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+                                    lineNumber: 72,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "text-sm font-bold text-[#4a3728]",
+                                    children: "Filters"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+                                    lineNumber: 75,
+                                    columnNumber: 13
+                                }, this),
+                                activeFilterCount > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "w-5 h-5 rounded-full bg-[#4a3728] text-[#e0d8cf] text-[10px] font-bold flex items-center justify-center",
+                                    children: activeFilterCount
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+                                    lineNumber: 77,
+                                    columnNumber: 15
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+                            lineNumber: 71,
+                            columnNumber: 11
+                        }, this),
+                        activeFilterCount > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            onClick: handleClearFilters,
+                            className: "text-xs text-[#6b5847] hover:text-[#4a3728] transition-colors font-medium",
+                            children: "Clear all"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+                            lineNumber: 83,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+                    lineNumber: 70,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "px-2 overflow-y-auto max-h-[calc(100vh-220px)]",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "py-3 border-b border-[#e8ddd4] space-y-0.5",
+                            children: [
+                                {
+                                    id: 'recommended',
+                                    label: 'Recommended',
+                                    icon: '✦',
+                                    count: null
+                                },
+                                {
+                                    id: 'recent',
+                                    label: 'Recent',
+                                    icon: '◷',
+                                    count: null
+                                },
+                                {
+                                    id: 'saved',
+                                    label: 'Saved Jobs',
+                                    icon: '◈',
+                                    count: savedCount
+                                },
+                                {
+                                    id: 'applied',
+                                    label: 'Applied',
+                                    icon: '◉',
+                                    count: appliedCount
+                                }
+                            ].map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    onClick: ()=>handleSetSection(item.id),
+                                    className: `w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium transition-all
+                  ${activeSection === item.id ? 'bg-[#4a3728] text-[#e0d8cf]' : 'text-[#6b5847] hover:text-[#4a3728] hover:bg-[#e0d8cf]/40'}`,
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "flex items-center gap-2",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: "text-xs opacity-70",
+                                                    children: item.icon
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+                                                    lineNumber: 107,
+                                                    columnNumber: 19
+                                                }, this),
+                                                item.label
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+                                            lineNumber: 106,
+                                            columnNumber: 17
+                                        }, this),
+                                        item.count !== null && item.count > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: `text-xs px-1.5 py-0.5 rounded-full font-bold
+                    ${activeSection === item.id ? 'bg-white/20 text-[#e0d8cf]' : 'bg-[#e0d8cf] text-[#4a3728]'}`,
+                                            children: item.count
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+                                            lineNumber: 111,
+                                            columnNumber: 19
+                                        }, this)
+                                    ]
+                                }, item.id, true, {
+                                    fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+                                    lineNumber: 97,
+                                    columnNumber: 15
+                                }, this))
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+                            lineNumber: 90,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(SidebarSection, {
+                            title: "Work Mode",
+                            children: WORK_MODES.map((m)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(FilterCheckbox, {
+                                    label: m.label,
+                                    checked: filters.workMode.includes(m.value),
+                                    onChange: ()=>handleToggleWorkMode(m.value),
+                                    dot: m.dot
+                                }, m.value, false, {
+                                    fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+                                    lineNumber: 122,
+                                    columnNumber: 15
+                                }, this))
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+                            lineNumber: 120,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(SidebarSection, {
+                            title: "Job Type",
+                            children: JOB_TYPES.map((t)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(FilterCheckbox, {
+                                    label: t.label,
+                                    checked: filters.types.includes(t.value),
+                                    onChange: ()=>handleToggleType(t.value)
+                                }, t.value, false, {
+                                    fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+                                    lineNumber: 130,
+                                    columnNumber: 15
+                                }, this))
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+                            lineNumber: 128,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(SidebarSection, {
+                            title: "Experience",
+                            children: EXPERIENCE_LEVELS.map((e)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(FilterCheckbox, {
+                                    label: e.label,
+                                    checked: filters.experience.includes(e.value),
+                                    onChange: ()=>handleToggleExperience(e.value)
+                                }, e.value, false, {
+                                    fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+                                    lineNumber: 138,
+                                    columnNumber: 15
+                                }, this))
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+                            lineNumber: 136,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(SidebarSection, {
+                            title: "Category",
+                            children: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$mockData$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CATEGORIES"].map((c)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(FilterCheckbox, {
+                                    label: c,
+                                    checked: filters.categories.includes(c),
+                                    onChange: ()=>handleToggleCategory(c)
+                                }, c, false, {
+                                    fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+                                    lineNumber: 146,
+                                    columnNumber: 15
+                                }, this))
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+                            lineNumber: 144,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+                    lineNumber: 89,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+            lineNumber: 69,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "[project]/src/components/jobs/FilterSidebar.tsx",
+        lineNumber: 68,
+        columnNumber: 5
+    }, this);
+}
+}),
+"[project]/src/components/jobs/JobCard.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "JobCard",
+    ()=>JobCard
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useJobs$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/hooks/useJobs.ts [app-ssr] (ecmascript)");
+'use client';
+;
+;
+;
+;
+const LOGO_BG = {
+    T8: '#4a3728',
+    NL: '#2d4a6b',
+    OR: '#7a3d1a',
+    DC: '#1a5c3a',
+    FM: '#6b1a3a',
+    PL: '#1a4a6b',
+    LC: '#6b4a1a',
+    ST: '#3a3a3a'
+};
+const WORK_MODE_STYLES = {
+    remote: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+    hybrid: 'bg-amber-50 text-amber-700 border-amber-200',
+    onsite: 'bg-rose-50 text-rose-700 border-rose-200'
+};
+const TYPE_LABELS = {
+    'full-time': 'Full-time',
+    'part-time': 'Part-time',
+    contract: 'Contract',
+    freelance: 'Freelance',
+    internship: 'Internship'
+};
+function timeAgo(dateStr) {
+    const diff = Date.now() - new Date(dateStr).getTime();
+    const days = Math.floor(diff / 86400000);
+    if (days === 0) return 'Today';
+    if (days === 1) return 'Yesterday';
+    if (days < 7) return `${days}d ago`;
+    return `${Math.floor(days / 7)}w ago`;
+}
+function formatSalary(min, max) {
+    const fmt = (n)=>n >= 1000 ? `$${Math.round(n / 1000)}k` : `$${n}`;
+    return `${fmt(min)} – ${fmt(max)}`;
+}
+const JobCard = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["memo"])(function JobCard({ job, variant = 'default' }) {
+    const { isJobSaved, isJobApplied, handleToggleSave } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useJobs$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useJobs"])();
+    const saved = isJobSaved(job.id);
+    const applied = isJobApplied(job.id);
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+        href: `/jobs/${job.id}`,
+        className: "group block",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: `
+        relative bg-white border border-[#d4c4b5] rounded-2xl p-5
+        transition-all duration-300 hover:border-[#4a3728]/30 hover:shadow-[0_4px_24px_rgba(74,55,40,0.10)]
+        ${job.featured ? 'border-[#4a3728]/25 shadow-[0_2px_12px_rgba(74,55,40,0.07)]' : ''}
+        ${variant === 'compact' ? 'p-4' : ''}
+      `,
+            children: [
+                job.featured && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "absolute top-0 right-0 overflow-hidden w-14 h-14",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "absolute top-2.5 right-[-14px] rotate-45 bg-[#4a3728] text-[#e0d8cf] text-[9px] font-bold tracking-widest py-0.5 px-5",
+                        children: "TOP"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/jobs/JobCard.tsx",
+                        lineNumber: 57,
+                        columnNumber: 13
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/src/components/jobs/JobCard.tsx",
+                    lineNumber: 56,
+                    columnNumber: 11
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "flex items-start justify-between gap-3",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex items-center gap-3 min-w-0",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "w-11 h-11 rounded-xl flex items-center justify-center text-white font-black text-sm tracking-tight shrink-0",
+                                    style: {
+                                        backgroundColor: LOGO_BG[job.companyLogo] ?? '#4a3728'
+                                    },
+                                    children: job.companyLogo
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/jobs/JobCard.tsx",
+                                    lineNumber: 65,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "min-w-0",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: "text-xs text-[#6b5847] font-medium truncate",
+                                            children: job.company
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/jobs/JobCard.tsx",
+                                            lineNumber: 72,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                            className: "text-[#4a3728] font-semibold text-sm leading-snug truncate group-hover:text-[#3a2a1e] transition-colors",
+                                            children: job.title
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/jobs/JobCard.tsx",
+                                            lineNumber: 73,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/components/jobs/JobCard.tsx",
+                                    lineNumber: 71,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/jobs/JobCard.tsx",
+                            lineNumber: 64,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            onClick: (e)=>{
+                                e.preventDefault();
+                                handleToggleSave(job.id);
+                            },
+                            className: "shrink-0 p-1.5 rounded-lg hover:bg-[#e0d8cf]/60 transition-colors",
+                            "aria-label": saved ? 'Unsave job' : 'Save job',
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                className: `w-4 h-4 transition-colors ${saved ? 'text-[#4a3728] fill-[#4a3728]' : 'text-[#d4c4b5] fill-none'}`,
+                                stroke: "currentColor",
+                                strokeWidth: 2,
+                                viewBox: "0 0 24 24",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                    strokeLinecap: "round",
+                                    strokeLinejoin: "round",
+                                    d: "M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/jobs/JobCard.tsx",
+                                    lineNumber: 86,
+                                    columnNumber: 15
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/jobs/JobCard.tsx",
+                                lineNumber: 84,
+                                columnNumber: 13
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/jobs/JobCard.tsx",
+                            lineNumber: 79,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/jobs/JobCard.tsx",
+                    lineNumber: 63,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "mt-3 flex flex-wrap gap-1.5",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                            className: `inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs border font-medium ${WORK_MODE_STYLES[job.workMode]}`,
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "w-1.5 h-1.5 rounded-full bg-current"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/jobs/JobCard.tsx",
+                                    lineNumber: 93,
+                                    columnNumber: 13
+                                }, this),
+                                job.workMode.charAt(0).toUpperCase() + job.workMode.slice(1)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/jobs/JobCard.tsx",
+                            lineNumber: 92,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                            className: "px-2.5 py-0.5 rounded-full text-xs bg-[#f7f3ef] border border-[#d4c4b5] text-[#6b5847] font-medium",
+                            children: TYPE_LABELS[job.type]
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/jobs/JobCard.tsx",
+                            lineNumber: 96,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                            className: "px-2.5 py-0.5 rounded-full text-xs bg-[#f7f3ef] border border-[#d4c4b5] text-[#6b5847] font-medium",
+                            children: job.experience.charAt(0).toUpperCase() + job.experience.slice(1)
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/jobs/JobCard.tsx",
+                            lineNumber: 99,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/jobs/JobCard.tsx",
+                    lineNumber: 91,
+                    columnNumber: 9
+                }, this),
+                variant !== 'compact' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "mt-2.5 flex flex-wrap gap-1",
+                    children: [
+                        job.tags.slice(0, 3).map((tag)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "px-2 py-0.5 rounded-md text-[11px] bg-[#e0d8cf]/60 text-[#4a3728] border border-[#d4c4b5] font-medium",
+                                children: tag
+                            }, tag, false, {
+                                fileName: "[project]/src/components/jobs/JobCard.tsx",
+                                lineNumber: 107,
+                                columnNumber: 15
+                            }, this)),
+                        job.tags.length > 3 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                            className: "px-2 py-0.5 rounded-md text-[11px] text-[#6b5847]",
+                            children: [
+                                "+",
+                                job.tags.length - 3
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/jobs/JobCard.tsx",
+                            lineNumber: 112,
+                            columnNumber: 15
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/jobs/JobCard.tsx",
+                    lineNumber: 105,
+                    columnNumber: 11
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "mt-4 pt-3 border-t border-[#e8ddd4] flex items-center justify-between",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-[#4a3728] font-bold text-sm",
+                                    children: formatSalary(job.salary.min, job.salary.max)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/jobs/JobCard.tsx",
+                                    lineNumber: 119,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-[#6b5847] text-xs mt-0.5",
+                                    children: job.location
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/jobs/JobCard.tsx",
+                                    lineNumber: 120,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/jobs/JobCard.tsx",
+                            lineNumber: 118,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "text-right",
+                            children: [
+                                applied ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 text-xs font-semibold border border-emerald-200",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                            className: "w-3 h-3",
+                                            fill: "none",
+                                            stroke: "currentColor",
+                                            strokeWidth: 2.5,
+                                            viewBox: "0 0 24 24",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                                strokeLinecap: "round",
+                                                strokeLinejoin: "round",
+                                                d: "M5 13l4 4L19 7"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/jobs/JobCard.tsx",
+                                                lineNumber: 126,
+                                                columnNumber: 19
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/jobs/JobCard.tsx",
+                                            lineNumber: 125,
+                                            columnNumber: 17
+                                        }, this),
+                                        "Applied"
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/components/jobs/JobCard.tsx",
+                                    lineNumber: 124,
+                                    columnNumber: 15
+                                }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-[#6b5847] text-xs",
+                                    children: timeAgo(job.postedAt)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/jobs/JobCard.tsx",
+                                    lineNumber: 131,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-[#d4c4b5] text-[11px] mt-0.5",
+                                    children: [
+                                        job.applicants,
+                                        " applicants"
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/components/jobs/JobCard.tsx",
+                                    lineNumber: 133,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/jobs/JobCard.tsx",
+                            lineNumber: 122,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/jobs/JobCard.tsx",
+                    lineNumber: 117,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/jobs/JobCard.tsx",
+            lineNumber: 49,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "[project]/src/components/jobs/JobCard.tsx",
+        lineNumber: 48,
+        columnNumber: 5
+    }, this);
+});
+}),
+"[project]/src/components/jobs/JobSections.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "JobSections",
+    ()=>JobSections
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useJobs$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/hooks/useJobs.ts [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$jobs$2f$JobCard$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/jobs/JobCard.tsx [app-ssr] (ecmascript)");
+'use client';
+;
+;
+;
+function EmptyState({ icon, title, subtitle }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "py-16 text-center",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "text-4xl mb-4",
+                children: icon
+            }, void 0, false, {
+                fileName: "[project]/src/components/jobs/JobSections.tsx",
+                lineNumber: 9,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                className: "text-[#4a3728] font-semibold mb-1",
+                children: title
+            }, void 0, false, {
+                fileName: "[project]/src/components/jobs/JobSections.tsx",
+                lineNumber: 10,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                className: "text-[#6b5847] text-sm",
+                children: subtitle
+            }, void 0, false, {
+                fileName: "[project]/src/components/jobs/JobSections.tsx",
+                lineNumber: 11,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/src/components/jobs/JobSections.tsx",
+        lineNumber: 8,
+        columnNumber: 5
+    }, this);
+}
+function SectionHeader({ title, count, badge }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "flex items-center gap-2.5 mb-4",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                className: "text-[#4a3728] font-bold text-base",
+                children: title
+            }, void 0, false, {
+                fileName: "[project]/src/components/jobs/JobSections.tsx",
+                lineNumber: 19,
+                columnNumber: 7
+            }, this),
+            count !== undefined && count > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                className: "px-2 py-0.5 rounded-md bg-[#e0d8cf] text-[#6b5847] text-xs font-semibold",
+                children: count
+            }, void 0, false, {
+                fileName: "[project]/src/components/jobs/JobSections.tsx",
+                lineNumber: 21,
+                columnNumber: 9
+            }, this),
+            badge && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                className: "px-2 py-0.5 rounded-md bg-[#4a3728]/8 text-[#4a3728] text-xs font-semibold border border-[#4a3728]/15",
+                children: badge
+            }, void 0, false, {
+                fileName: "[project]/src/components/jobs/JobSections.tsx",
+                lineNumber: 24,
+                columnNumber: 9
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/src/components/jobs/JobSections.tsx",
+        lineNumber: 18,
+        columnNumber: 5
+    }, this);
+}
+function JobGrid({ jobs }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "grid grid-cols-1 xl:grid-cols-2 gap-3",
+        children: jobs.map((job)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$jobs$2f$JobCard$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["JobCard"], {
+                job: job
+            }, job.id, false, {
+                fileName: "[project]/src/components/jobs/JobSections.tsx",
+                lineNumber: 35,
+                columnNumber: 26
+            }, this))
+    }, void 0, false, {
+        fileName: "[project]/src/components/jobs/JobSections.tsx",
+        lineNumber: 34,
+        columnNumber: 5
+    }, this);
+}
+function JobSections() {
+    const { filteredJobs, featuredJobs, recentJobs, savedJobObjects, appliedJobObjects, activeSection, filters } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useJobs$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useJobs"])();
+    const isFiltering = filters.search || filters.types.length || filters.experience.length || filters.workMode.length || filters.categories.length || filters.location;
+    if (isFiltering) {
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(SectionHeader, {
+                    title: "Search Results",
+                    count: filteredJobs.length
+                }, void 0, false, {
+                    fileName: "[project]/src/components/jobs/JobSections.tsx",
+                    lineNumber: 49,
+                    columnNumber: 9
+                }, this),
+                filteredJobs.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(EmptyState, {
+                    icon: "🔍",
+                    title: "No jobs match your search",
+                    subtitle: "Try adjusting your filters or search terms"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/jobs/JobSections.tsx",
+                    lineNumber: 51,
+                    columnNumber: 13
+                }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(JobGrid, {
+                    jobs: filteredJobs
+                }, void 0, false, {
+                    fileName: "[project]/src/components/jobs/JobSections.tsx",
+                    lineNumber: 52,
+                    columnNumber: 13
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/jobs/JobSections.tsx",
+            lineNumber: 48,
+            columnNumber: 7
+        }, this);
+    }
+    if (activeSection === 'saved') {
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(SectionHeader, {
+                    title: "Saved Jobs",
+                    count: savedJobObjects.length
+                }, void 0, false, {
+                    fileName: "[project]/src/components/jobs/JobSections.tsx",
+                    lineNumber: 60,
+                    columnNumber: 9
+                }, this),
+                savedJobObjects.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(EmptyState, {
+                    icon: "◈",
+                    title: "No saved jobs yet",
+                    subtitle: "Bookmark jobs you're interested in to find them here"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/jobs/JobSections.tsx",
+                    lineNumber: 62,
+                    columnNumber: 13
+                }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(JobGrid, {
+                    jobs: savedJobObjects
+                }, void 0, false, {
+                    fileName: "[project]/src/components/jobs/JobSections.tsx",
+                    lineNumber: 63,
+                    columnNumber: 13
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/jobs/JobSections.tsx",
+            lineNumber: 59,
+            columnNumber: 7
+        }, this);
+    }
+    if (activeSection === 'applied') {
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(SectionHeader, {
+                    title: "Applied Jobs",
+                    count: appliedJobObjects.length
+                }, void 0, false, {
+                    fileName: "[project]/src/components/jobs/JobSections.tsx",
+                    lineNumber: 71,
+                    columnNumber: 9
+                }, this),
+                appliedJobObjects.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(EmptyState, {
+                    icon: "◉",
+                    title: "No applications yet",
+                    subtitle: "Jobs you apply to will show up here"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/jobs/JobSections.tsx",
+                    lineNumber: 73,
+                    columnNumber: 13
+                }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(JobGrid, {
+                    jobs: appliedJobObjects
+                }, void 0, false, {
+                    fileName: "[project]/src/components/jobs/JobSections.tsx",
+                    lineNumber: 74,
+                    columnNumber: 13
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/jobs/JobSections.tsx",
+            lineNumber: 70,
+            columnNumber: 7
+        }, this);
+    }
+    if (activeSection === 'recent') {
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(SectionHeader, {
+                    title: "Recently Posted",
+                    count: recentJobs.length
+                }, void 0, false, {
+                    fileName: "[project]/src/components/jobs/JobSections.tsx",
+                    lineNumber: 82,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(JobGrid, {
+                    jobs: recentJobs
+                }, void 0, false, {
+                    fileName: "[project]/src/components/jobs/JobSections.tsx",
+                    lineNumber: 83,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/jobs/JobSections.tsx",
+            lineNumber: 81,
+            columnNumber: 7
+        }, this);
+    }
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "space-y-8",
+        children: [
+            featuredJobs.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(SectionHeader, {
+                        title: "Recommended for You",
+                        count: featuredJobs.length,
+                        badge: "✦ Curated"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/jobs/JobSections.tsx",
+                        lineNumber: 92,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(JobGrid, {
+                        jobs: featuredJobs
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/jobs/JobSections.tsx",
+                        lineNumber: 93,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/components/jobs/JobSections.tsx",
+                lineNumber: 91,
+                columnNumber: 9
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(SectionHeader, {
+                        title: "Recently Posted",
+                        count: recentJobs.length
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/jobs/JobSections.tsx",
+                        lineNumber: 97,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(JobGrid, {
+                        jobs: recentJobs
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/jobs/JobSections.tsx",
+                        lineNumber: 98,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/components/jobs/JobSections.tsx",
+                lineNumber: 96,
+                columnNumber: 7
+            }, this),
+            [
+                'Engineering',
+                'Design',
+                'Product'
+            ].map((cat)=>{
+                const catJobs = filteredJobs.filter((j)=>j.category === cat).slice(0, 4);
+                if (!catJobs.length) return null;
+                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(SectionHeader, {
+                            title: `${cat} Roles`,
+                            count: catJobs.length
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/jobs/JobSections.tsx",
+                            lineNumber: 105,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(JobGrid, {
+                            jobs: catJobs
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/jobs/JobSections.tsx",
+                            lineNumber: 106,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, cat, true, {
+                    fileName: "[project]/src/components/jobs/JobSections.tsx",
+                    lineNumber: 104,
+                    columnNumber: 11
+                }, this);
+            })
+        ]
+    }, void 0, true, {
+        fileName: "[project]/src/components/jobs/JobSections.tsx",
+        lineNumber: 89,
+        columnNumber: 5
+    }, this);
+}
+}),
+"[project]/src/app/page.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>JobsPage
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$jobs$2f$SearchBar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/jobs/SearchBar.tsx [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$jobs$2f$FilterSidebar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/jobs/FilterSidebar.tsx [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$jobs$2f$JobSections$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/jobs/JobSections.tsx [app-ssr] (ecmascript)");
+'use client';
+;
+;
+;
+;
+function JobsPage() {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "min-h-screen bg-[#f7f3ef]",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
+                className: "sticky top-0 z-50 border-b border-[#d4c4b5] bg-[#f7f3ef]/90 backdrop-blur-xl",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "max-w-7xl mx-auto px-6 h-14 flex items-center justify-between",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex items-center gap-2",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "w-7 h-7 rounded-lg bg-[#4a3728] flex items-center justify-center",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-[#e0d8cf] font-black text-[11px]",
+                                        children: "T8"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/page.tsx",
+                                        lineNumber: 13,
+                                        columnNumber: 15
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/app/page.tsx",
+                                    lineNumber: 12,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "text-[#4a3728] font-bold text-sm tracking-tight",
+                                    children: "throne8"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/app/page.tsx",
+                                    lineNumber: 15,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "text-[#d4c4b5] text-sm mx-1",
+                                    children: "/"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/app/page.tsx",
+                                    lineNumber: 16,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "text-[#6b5847] text-sm font-medium",
+                                    children: "Jobs"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/app/page.tsx",
+                                    lineNumber: 17,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/app/page.tsx",
+                            lineNumber: 11,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            className: "px-3.5 py-1.5 bg-[#4a3728] hover:bg-[#3a2a1e] text-[#e0d8cf] text-sm font-semibold rounded-lg transition-all",
+                            children: "Post a Job"
+                        }, void 0, false, {
+                            fileName: "[project]/src/app/page.tsx",
+                            lineNumber: 19,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/app/page.tsx",
+                    lineNumber: 10,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/src/app/page.tsx",
+                lineNumber: 9,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
+                className: "max-w-7xl mx-auto px-6 py-8",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mb-6",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                                className: "text-2xl font-black text-[#4a3728] tracking-tight",
+                                children: [
+                                    "Find Your Next",
+                                    ' ',
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "relative",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "relative z-10",
+                                                children: "Opportunity"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/app/page.tsx",
+                                                lineNumber: 30,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "absolute bottom-0 left-0 w-full h-2 bg-[#e0d8cf] -z-0 rounded"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/app/page.tsx",
+                                                lineNumber: 31,
+                                                columnNumber: 15
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/app/page.tsx",
+                                        lineNumber: 29,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/app/page.tsx",
+                                lineNumber: 27,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "text-[#6b5847] text-sm mt-1",
+                                children: "Discover roles at the most ambitious companies building the future"
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/page.tsx",
+                                lineNumber: 34,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/app/page.tsx",
+                        lineNumber: 26,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mb-8",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$jobs$2f$SearchBar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SearchBar"], {}, void 0, false, {
+                            fileName: "[project]/src/app/page.tsx",
+                            lineNumber: 38,
+                            columnNumber: 11
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/page.tsx",
+                        lineNumber: 37,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "flex gap-6 items-start",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$jobs$2f$FilterSidebar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FilterSidebar"], {}, void 0, false, {
+                                fileName: "[project]/src/app/page.tsx",
+                                lineNumber: 42,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex-1 min-w-0",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$jobs$2f$JobSections$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["JobSections"], {}, void 0, false, {
+                                    fileName: "[project]/src/app/page.tsx",
+                                    lineNumber: 44,
+                                    columnNumber: 13
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/page.tsx",
+                                lineNumber: 43,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/app/page.tsx",
+                        lineNumber: 41,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/app/page.tsx",
+                lineNumber: 25,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/src/app/page.tsx",
+        lineNumber: 8,
+        columnNumber: 5
+    }, this);
+}
+}),
+];
+
+//# sourceMappingURL=%5Broot-of-the-server%5D__8e699fb4._.js.map

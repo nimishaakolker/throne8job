@@ -1,0 +1,219 @@
+'use client'
+import { useState } from 'react'
+import { useParams, useRouter } from 'next/navigation'
+import Link from 'next/link'
+import { useAppSelector } from '@/store'
+import { selectJobById, selectSavedJobIds, selectAppliedJobIds } from '@/store/slices/jobsSlice'
+import { useJobs } from '@/hooks/useJobs'
+import { ApplicationModal } from '../components/ApplicationModal'
+
+const LOGO_BG: Record<string, string> = {
+  T8: '#4a3728', NL: '#2d4a6b', OR: '#7a3d1a',
+  DC: '#1a5c3a', FM: '#6b1a3a', PL: '#1a4a6b',
+  LC: '#6b4a1a', ST: '#3a3a3a',
+}
+
+const WORK_MODE_STYLE: Record<string, string> = {
+  remote: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+  hybrid: 'bg-amber-50   text-amber-700   border-amber-200',
+  onsite: 'bg-rose-50    text-rose-700    border-rose-200',
+}
+
+const fmt = (n: number) => `$${Math.round(n / 1000)}k`
+
+function BulletList({ items, color }: { items: string[]; color: string }) {
+  return (
+    <ul className="space-y-2.5">
+      {items.map((item, i) => (
+        <li key={i} className="flex items-start gap-3 text-sm text-[#6b5847]">
+          <span className={`w-1.5 h-1.5 rounded-full ${color} mt-1.5 shrink-0`} />
+          {item}
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+export default function JobDetailPage() {
+  const { id }            = useParams<{ id: string }>()
+  const router            = useRouter()
+  const [modal, setModal] = useState(false)
+
+  const job        = useAppSelector(selectJobById(id))
+  const savedIds   = useAppSelector(selectSavedJobIds)
+  const appliedIds = useAppSelector(selectAppliedJobIds)
+  const { handleToggleSave, handleApply } = useJobs()
+
+  if (!job) {
+    return (
+      <div className="min-h-screen bg-[#f7f3ef] flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-[#4a3728] font-semibold text-lg mb-2">Job not found</p>
+          <Link href="/jobs" className="text-[#6b5847] hover:text-[#4a3728] text-sm transition-colors">
+            ← Back to jobs
+          </Link>
+        </div>
+      </div>
+    )
+  }
+
+  const isSaved   = savedIds.includes(job.id)
+  const isApplied = appliedIds.includes(job.id)
+
+  return (
+    <div className="min-h-screen bg-[#f7f3ef]">
+
+      <header className="sticky top-0 z-50 border-b border-[#d4c4b5] bg-[#f7f3ef]/90 backdrop-blur-xl">
+        <div className="max-w-5xl mx-auto px-6 h-14 flex items-center gap-4">
+          <button onClick={() => router.back()}
+            className="flex items-center gap-2 text-[#6b5847] hover:text-[#4a3728] transition-colors text-sm font-medium">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+            Back
+          </button>
+          <div className="h-4 w-px bg-[#d4c4b5]" />
+          <Link href="/jobs" className="flex items-center gap-2">
+            <div className="w-6 h-6 rounded-md bg-[#4a3728] flex items-center justify-center">
+              <span className="text-[#e0d8cf] font-black text-[9px]">T8</span>
+            </div>
+            <span className="text-[#6b5847] text-sm font-medium">throne8 / Jobs</span>
+          </Link>
+        </div>
+      </header>
+
+      <main className="max-w-5xl mx-auto px-6 py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+          {/* Left: content */}
+          <div className="lg:col-span-2 space-y-4">
+
+            <div className="bg-white border border-[#d4c4b5] rounded-2xl p-6 shadow-sm">
+              <div className="flex items-start gap-4">
+                <div className="w-14 h-14 rounded-xl flex items-center justify-center text-white font-black text-base shrink-0"
+                  style={{ backgroundColor: LOGO_BG[job.companyLogo] ?? '#4a3728' }}>
+                  {job.companyLogo}
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-[#6b5847] text-sm font-medium">{job.company}</p>
+                  <h1 className="text-xl font-black text-[#4a3728] leading-snug mt-0.5">{job.title}</h1>
+                  <p className="text-[#6b5847] text-sm mt-1 flex items-center gap-1.5">
+                    <svg className="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    </svg>
+                    {job.location}
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-4 flex flex-wrap gap-2">
+                <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs border font-semibold ${WORK_MODE_STYLE[job.workMode]}`}>
+                  <span className="w-1.5 h-1.5 rounded-full bg-current" />
+                  {job.workMode.charAt(0).toUpperCase() + job.workMode.slice(1)}
+                </span>
+                {[job.type, `${job.experience} level`, `${job.applicants} applicants`].map((t) => (
+                  <span key={t} className="px-3 py-1 rounded-full text-xs bg-[#f7f3ef] border border-[#d4c4b5] text-[#6b5847] font-semibold capitalize">
+                    {t}
+                  </span>
+                ))}
+              </div>
+
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {job.tags.map((tag) => (
+                  <span key={tag} className="px-2.5 py-1 rounded-lg text-xs bg-[#e0d8cf]/50 text-[#4a3728] border border-[#d4c4b5] font-medium">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {[
+              { title: 'About the Role',   body: <p className="text-[#6b5847] text-sm leading-relaxed">{job.description}</p> },
+              { title: "What You'll Do",   body: <BulletList items={job.responsibilities} color="bg-[#4a3728]" /> },
+              { title: 'Requirements',     body: <BulletList items={job.requirements} color="bg-[#6b5847]" /> },
+              { title: 'Benefits & Perks', body: (
+                <div className="grid grid-cols-2 gap-2">
+                  {job.benefits.map((b) => (
+                    <div key={b} className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-[#f7f3ef] border border-[#e8ddd4]">
+                      <span className="text-[#4a3728] text-xs">✦</span>
+                      <span className="text-sm text-[#4a3728] font-medium">{b}</span>
+                    </div>
+                  ))}
+                </div>
+              )},
+            ].map(({ title, body }) => (
+              <div key={title} className="bg-white border border-[#d4c4b5] rounded-2xl p-6 shadow-sm">
+                <h2 className="text-[#4a3728] font-bold mb-3">{title}</h2>
+                {body}
+              </div>
+            ))}
+          </div>
+
+          {/* Right: sticky sidebar */}
+          <div className="sticky top-20 space-y-3 h-fit">
+            <div className="bg-white border border-[#d4c4b5] rounded-2xl p-5 shadow-sm">
+              <p className="text-[#6b5847] text-xs font-medium uppercase tracking-widest mb-1">Compensation</p>
+              <p className="text-[#4a3728] font-black text-xl mb-4">{fmt(job.salary.min)} – {fmt(job.salary.max)} / yr</p>
+
+              <button
+                onClick={() => !isApplied && setModal(true)}
+                disabled={isApplied}
+                className={`w-full py-3.5 rounded-xl font-bold text-sm transition-colors
+                  ${isApplied
+                    ? 'bg-emerald-50 text-emerald-700 border border-emerald-200 cursor-default'
+                    : 'bg-[#4a3728] hover:bg-[#3a2a1e] text-[#e0d8cf]'
+                  }`}
+              >
+                {isApplied
+                  ? <span className="flex items-center justify-center gap-2">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      Application Submitted
+                    </span>
+                  : 'Apply Now'
+                }
+              </button>
+
+              <button onClick={() => handleToggleSave(job.id)}
+                className={`w-full py-3 rounded-xl font-semibold text-sm mt-2 border transition-colors
+                  ${isSaved
+                    ? 'bg-[#4a3728]/[0.07] text-[#4a3728] border-[#4a3728]/20'
+                    : 'bg-white text-[#6b5847] border-[#d4c4b5] hover:text-[#4a3728] hover:border-[#4a3728]/30'
+                  }`}
+              >
+                {isSaved ? '◈ Saved' : '◇ Save Job'}
+              </button>
+            </div>
+
+            <div className="bg-white border border-[#d4c4b5] rounded-2xl p-5 shadow-sm">
+              <h3 className="text-[#4a3728] font-bold text-sm mb-3">Job Details</h3>
+              <dl className="space-y-3">
+                {[
+                  ['Category',   job.category],
+                  ['Posted',     new Date(job.postedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })],
+                  ['Deadline',   new Date(job.deadline).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })],
+                  ['Applicants', `${job.applicants} people`],
+                ].map(([label, value]) => (
+                  <div key={label} className="flex justify-between items-center">
+                    <dt className="text-[#6b5847] text-xs font-medium">{label}</dt>
+                    <dd className="text-[#4a3728] text-xs font-semibold">{value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </div>
+
+        </div>
+      </main>
+
+      {modal && (
+        <ApplicationModal
+          job={job}
+          onSubmit={() => { handleApply(job.id); setModal(false) }}
+          onClose={() => setModal(false)}
+        />
+      )}
+    </div>
+  )
+}
