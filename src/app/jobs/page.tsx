@@ -1,7 +1,7 @@
-import { HeroSection }   from './components/HeroSection'
-import { FilterSidebar } from './components/FilterSidebar'
-import { JobSections }   from './components/JobSections'
-import { JobsTopNav }    from './components/JobTopNav'
+import { HeroSection }   from './_components/HeroSection'
+import { FilterSidebar } from './_components/FilterSidebar'
+import { JobSections }   from './_components/JobSections'
+import { JobsTopNav }    from './_components/JobTopNav'
 
 export default function JobsPage() {
   return (

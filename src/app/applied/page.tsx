@@ -1,8 +1,8 @@
 'use client'
 import Link from 'next/link'
 import { memo } from 'react'
-import { useApplied, TabFilter } from './hooks/useApplied'
-import { ApplicationRow } from './components/ApplicationRow'
+import { useApplied, TabFilter } from './_hooks/useApplied'
+import { ApplicationRow } from './_components/ApplicationRow'
 import { STATUS_CFG } from '@/types/jobConstants'
 import { ApplicationStatus } from '@/types/jobs'
 

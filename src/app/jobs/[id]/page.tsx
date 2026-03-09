@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useAppSelector } from '@/store'
 import { selectJobById, selectSavedJobIds, selectAppliedJobIds } from '@/store/slices/jobsSlice'
 import { useJobs } from '@/hooks/useJobs'
-import { ApplicationModal } from '../components/ApplicationModal'
+import { ApplicationModal } from '../_components/ApplicationModal'
 import { LOGO_BG, WORK_MODE_STYLE, formatSalary } from '@/types/jobConstants'
 
 const BulletList = memo(function BulletList({ items, color }: { items: string[]; color: string }) {

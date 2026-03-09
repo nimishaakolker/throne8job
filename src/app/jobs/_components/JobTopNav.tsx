@@ -13,7 +13,7 @@ export const JobsTopNav = memo(function JobsTopNav() {
   const { activeSection, savedCount, appliedCount, handleSetSection } = useJobs()
 
   return (
-    <div className="border-b border-[#d4c4b5] sticky top-14 z-30 shadow-sm bg-[#f7f3ef]">
+  <div className="border-b border-[#d4c4b5] sticky top-0 z-30 shadow-sm bg-[#f7f3ef]/90 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center gap-1 h-12">
 

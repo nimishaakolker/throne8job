@@ -2,14 +2,18 @@
 import { memo } from 'react'
 import Link from 'next/link'
 import { Job } from '@/types/jobs'
-import { useJobs } from '@/hooks/useJobs'
 import { LOGO_BG, WORK_MODE_STYLE, TYPE_LABEL, formatSalary, timeAgo } from '@/types/jobConstants'
 
-export const JobCard = memo(function JobCard({ job }: { job: Job }) {
-  const { isJobSaved, isJobApplied, handleToggleSave } = useJobs()
-  const saved   = isJobSaved(job.id)
-  const applied = isJobApplied(job.id)
+interface Props {
+  job:       Job
+  isSaved:   boolean
+  isApplied: boolean
+  onSave:    (id: string) => void
+}
 
+// Props passed in from JobSections — card itself does NOT call useJobs
+// So only cards whose isSaved/isApplied actually changed will re-render
+export const JobCard = memo(function JobCard({ job, isSaved, isApplied, onSave }: Props) {
   return (
     <Link href={`/jobs/${job.id}`} className="group block">
       <article className={`
@@ -42,12 +46,12 @@ export const JobCard = memo(function JobCard({ job }: { job: Job }) {
             </div>
           </div>
           <button
-            onClick={e => { e.preventDefault(); handleToggleSave(job.id) }}
+            onClick={e => { e.preventDefault(); onSave(job.id) }}
             className="shrink-0 p-1.5 rounded-lg hover:bg-[#e0d8cf]/60 transition-colors"
-            aria-label={saved ? 'Unsave job' : 'Save job'}
+            aria-label={isSaved ? 'Unsave job' : 'Save job'}
           >
             <svg
-              className={`w-4 h-4 transition-colors ${saved ? 'text-[#4a3728] fill-[#4a3728]' : 'text-[#d4c4b5] fill-none'}`}
+              className={`w-4 h-4 transition-colors ${isSaved ? 'text-[#4a3728] fill-[#4a3728]' : 'text-[#d4c4b5] fill-none'}`}
               stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
@@ -85,7 +89,7 @@ export const JobCard = memo(function JobCard({ job }: { job: Job }) {
             <p className="text-[#6b5847] text-xs mt-0.5">{job.location}</p>
           </div>
           <div className="text-right">
-            {applied ? (
+            {isApplied ? (
               <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 text-xs font-semibold border border-emerald-200">
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />

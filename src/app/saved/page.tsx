@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
-import { useSaved }    from './hooks/useSaved'
-import { SavedJobRow } from './components/SavedJobRow'
+import { useSaved }    from './_hooks/useSaved'
+import { SavedJobRow } from './_components/SavedJobRow'
 
 export default function SavedPage() {
   const { jobs, stats, isEmpty, unsave } = useSaved()
