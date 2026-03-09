@@ -38,6 +38,8 @@ export interface FilterState {
   workMode: WorkMode[]
   categories: string[]
   location: string
+  salaryMin: number  // ← added
+  salaryMax: number  // ← added
 }
 
 export interface JobsState {
@@ -47,4 +49,6 @@ export interface JobsState {
   appliedJobs: string[]
   filters: FilterState
   activeSection: SectionView
+  loading: boolean   // ← added
+  error: string | null // ← added
 }

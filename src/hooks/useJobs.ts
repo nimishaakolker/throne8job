@@ -1,15 +1,21 @@
 import { useCallback } from 'react'
 import { useAppDispatch, useAppSelector } from '@/store'
 import {
-  setSearch, setLocation, toggleJobType, toggleExperience,
-  toggleWorkMode, toggleCategory, clearFilters,
+  setSearch, setLocation,
+  toggleFilterType,       // was: toggleJobType
+  toggleFilterExperience, // was: toggleExperience
+  toggleFilterWorkMode,   // was: toggleWorkMode
+  toggleFilterCategory,   // was: toggleCategory
+  clearFilters,
   toggleSaveJob, applyToJob, setActiveSection,
-  selectFilteredJobs, selectFilters, selectSavedJobIds,
-  selectAppliedJobIds, selectFeaturedJobs, selectRecentJobs,
+  selectFilteredJobs, selectFilters,
+  selectSavedJobs,        // was: selectSavedJobIds
+  selectAppliedJobs,      // was: selectAppliedJobIds
+  selectFeaturedJobs, selectRecentJobs,
   selectSavedJobObjects, selectAppliedJobObjects,
-  selectActiveSection, selectActiveFilterCount,
+  selectActiveSection,
 } from '@/store/slices/jobsSlice'
-import { JobType, ExperienceLevel, WorkMode, SectionView } from '@/types/jobs'
+import { JobType, ExperienceLevel, WorkMode } from '@/types/jobs'
 
 export function useJobs() {
   const dispatch = useAppDispatch()
@@ -18,26 +24,32 @@ export function useJobs() {
   const featuredJobs      = useAppSelector(selectFeaturedJobs)
   const recentJobs        = useAppSelector(selectRecentJobs)
   const filters           = useAppSelector(selectFilters)
-  const savedJobIds       = useAppSelector(selectSavedJobIds)
-  const appliedJobIds     = useAppSelector(selectAppliedJobIds)
+  const savedJobIds       = useAppSelector(selectSavedJobs)
+  const appliedJobIds     = useAppSelector(selectAppliedJobs)
   const savedJobObjects   = useAppSelector(selectSavedJobObjects)
   const appliedJobObjects = useAppSelector(selectAppliedJobObjects)
   const activeSection     = useAppSelector(selectActiveSection)
-  const activeFilterCount = useAppSelector(selectActiveFilterCount)
 
-  const handleSearch         = useCallback((v: string)          => dispatch(setSearch(v)),          [dispatch])
-  const handleLocation       = useCallback((v: string)          => dispatch(setLocation(v)),        [dispatch])
-  const handleToggleType     = useCallback((v: JobType)         => dispatch(toggleJobType(v)),      [dispatch])
-  const handleToggleExp      = useCallback((v: ExperienceLevel) => dispatch(toggleExperience(v)),   [dispatch])
-  const handleToggleWorkMode = useCallback((v: WorkMode)        => dispatch(toggleWorkMode(v)),     [dispatch])
-  const handleToggleCategory = useCallback((v: string)          => dispatch(toggleCategory(v)),     [dispatch])
-  const handleClearFilters   = useCallback(()                   => dispatch(clearFilters()),        [dispatch])
-  const handleToggleSave     = useCallback((id: string)         => dispatch(toggleSaveJob(id)),     [dispatch])
-  const handleApply          = useCallback((id: string)         => dispatch(applyToJob(id)),        [dispatch])
-  const handleSetSection     = useCallback((s: SectionView)     => dispatch(setActiveSection(s)),   [dispatch])
+  const handleSearch         = useCallback((v: string)          => dispatch(setSearch(v)),               [dispatch])
+  const handleLocation       = useCallback((v: string)          => dispatch(setLocation(v)),             [dispatch])
+  const handleToggleType     = useCallback((v: JobType)         => dispatch(toggleFilterType(v)),        [dispatch])
+  const handleToggleExp      = useCallback((v: ExperienceLevel) => dispatch(toggleFilterExperience(v)),  [dispatch])
+  const handleToggleWorkMode = useCallback((v: WorkMode)        => dispatch(toggleFilterWorkMode(v)),    [dispatch])
+  const handleToggleCategory = useCallback((v: string)          => dispatch(toggleFilterCategory(v)),    [dispatch])
+  const handleClearFilters   = useCallback(()                   => dispatch(clearFilters()),             [dispatch])
+  const handleToggleSave     = useCallback((id: string)         => dispatch(toggleSaveJob(id)),          [dispatch])
+  const handleApply          = useCallback((id: string)         => dispatch(applyToJob(id)),             [dispatch])
+  const handleSetSection     = useCallback((s: 'recommended' | 'recent' | 'saved' | 'applied') => dispatch(setActiveSection(s)), [dispatch])
 
   const isJobSaved   = useCallback((id: string) => savedJobIds.includes(id),   [savedJobIds])
   const isJobApplied = useCallback((id: string) => appliedJobIds.includes(id), [appliedJobIds])
+
+  const activeFilterCount =
+    filters.types.length +
+    filters.experience.length +
+    filters.workMode.length +
+    filters.categories.length +
+    (filters.location ? 1 : 0)
 
   const isFiltering =
     !!filters.search ||
