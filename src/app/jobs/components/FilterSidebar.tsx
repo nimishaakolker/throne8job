@@ -1,4 +1,5 @@
 'use client'
+import { memo } from 'react'
 import { useJobs } from '@/hooks/useJobs'
 import { CATEGORIES } from '@/lib/mockData'
 import { JobType, ExperienceLevel, WorkMode } from '@/types/jobs'
@@ -22,7 +23,7 @@ const WORK_MODES: { value: WorkMode; label: string; dot: string }[] = [
   { value: 'onsite', label: 'On-site', dot: 'bg-rose-500'    },
 ]
 
-function Checkbox({ label, checked, onChange, dot }: {
+const Checkbox = memo(function Checkbox({ label, checked, onChange, dot }: {
   label: string; checked: boolean; onChange: () => void; dot?: string
 }) {
   return (
@@ -43,18 +44,18 @@ function Checkbox({ label, checked, onChange, dot }: {
       <span className="text-sm font-medium">{label}</span>
     </button>
   )
-}
+})
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
+const Section = memo(function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div className="py-4 border-b border-[#e8ddd4] last:border-0">
       <p className="text-[10px] font-bold tracking-widest text-[#6b5847] uppercase mb-2 px-1">{title}</p>
       <div className="space-y-0.5">{children}</div>
     </div>
   )
-}
+})
 
-export function FilterSidebar() {
+export const FilterSidebar = memo(function FilterSidebar() {
   const {
     filters, activeFilterCount,
     handleToggleType, handleToggleExp, handleToggleWorkMode,
@@ -62,10 +63,9 @@ export function FilterSidebar() {
   } = useJobs()
 
   return (
-    <aside className="w-60 shrink-0 sticky top-20 h-fit">
+    <aside className="w-60 shrink-0 sticky top-[104px] h-fit">
       <div className="bg-white border border-[#d4c4b5] rounded-2xl overflow-hidden shadow-sm">
 
-        {/* Header */}
         <div className="px-4 py-3.5 border-b border-[#e8ddd4] flex items-center justify-between">
           <div className="flex items-center gap-2">
             <svg className="w-4 h-4 text-[#4a3728]" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -85,34 +85,30 @@ export function FilterSidebar() {
           )}
         </div>
 
-        {/* Filter sections only — no navigation here */}
         <div className="px-2 overflow-y-auto max-h-[calc(100vh-200px)]">
           <Section title="Work Mode">
-            {WORK_MODES.map((m) => (
+            {WORK_MODES.map(m => (
               <Checkbox key={m.value} label={m.label} dot={m.dot}
                 checked={filters.workMode.includes(m.value)}
                 onChange={() => handleToggleWorkMode(m.value)} />
             ))}
           </Section>
-
           <Section title="Job Type">
-            {JOB_TYPES.map((t) => (
+            {JOB_TYPES.map(t => (
               <Checkbox key={t.value} label={t.label}
                 checked={filters.types.includes(t.value)}
                 onChange={() => handleToggleType(t.value)} />
             ))}
           </Section>
-
           <Section title="Experience">
-            {EXPERIENCE_LEVELS.map((e) => (
+            {EXPERIENCE_LEVELS.map(e => (
               <Checkbox key={e.value} label={e.label}
                 checked={filters.experience.includes(e.value)}
                 onChange={() => handleToggleExp(e.value)} />
             ))}
           </Section>
-
           <Section title="Category">
-            {CATEGORIES.map((c) => (
+            {CATEGORIES.map(c => (
               <Checkbox key={c} label={c}
                 checked={filters.categories.includes(c)}
                 onChange={() => handleToggleCategory(c)} />
@@ -122,4 +118,4 @@ export function FilterSidebar() {
       </div>
     </aside>
   )
-}
+})

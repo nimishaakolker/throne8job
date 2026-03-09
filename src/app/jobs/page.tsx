@@ -7,7 +7,6 @@ export default function JobsPage() {
   return (
     <div className="min-h-screen bg-[#f7f3ef]">
       <HeroSection />
-      {/* Top nav: Recommended | Recent | Saved ↗ | Applied ↗ */}
       <JobsTopNav />
       <main className="max-w-7xl mx-auto px-6 py-8">
         <div className="flex gap-6 items-start">

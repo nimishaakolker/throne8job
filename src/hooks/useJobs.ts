@@ -1,3 +1,4 @@
+import { useCallback } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {
   selectFilteredJobs, selectFeaturedJobs, selectRecentJobs,
@@ -35,39 +36,37 @@ export function useJobs() {
     (filters.search ? 1 : 0) + (filters.location ? 1 : 0) +
     (filters.salaryMin > 0 || filters.salaryMax < 500000 ? 1 : 0)
 
+  // Stable callbacks — won't cause unnecessary re-renders in child components
+  const handleSearch         = useCallback((q: string)         => dispatch(setSearch(q)),                       [dispatch])
+  const handleLocation       = useCallback((v: string)         => dispatch(setLocation(v)),                     [dispatch])
+  const handleToggleType     = useCallback((t: JobType)         => dispatch(toggleFilterType(t)),               [dispatch])
+  const handleToggleExp      = useCallback((e: ExperienceLevel) => dispatch(toggleFilterExperience(e)),         [dispatch])
+  const handleToggleWorkMode = useCallback((m: WorkMode)        => dispatch(toggleFilterWorkMode(m)),           [dispatch])
+  const handleToggleCategory = useCallback((c: string)          => dispatch(toggleFilterCategory(c)),           [dispatch])
+  const handleClearFilters   = useCallback(()                   => dispatch(clearFilters()),                     [dispatch])
+  const handleToggleSave     = useCallback((id: string)         => dispatch(toggleSaveJob(id)),                 [dispatch])
+  const handleApply          = useCallback((id: string)         => dispatch(applyToJob(id)),                    [dispatch])
+  const handleUpdateStatus   = useCallback((jobId: string, status: ApplicationStatus) =>
+                                dispatch(updateApplicationStatus({ jobId, status })),                            [dispatch])
+  const handleSetSection     = useCallback((s: SectionView)     => dispatch(setActiveSection(s)),               [dispatch])
+
   return {
     // state
-    filters,
-    filteredJobs,
-    featuredJobs,
-    recentJobs,
-    savedJobObjects,
-    appliedJobObjects,
-    applications,
-    activeSection,
-    isFiltering,
-    activeFilterCount,
+    filters, filteredJobs, featuredJobs, recentJobs,
+    savedJobObjects, appliedJobObjects, applications,
+    activeSection, isFiltering, activeFilterCount,
     savedCount:   savedJobObjects.length,
     appliedCount: appliedJobObjects.length,
 
-    // helpers
+    // helpers (stable — defined inline is fine since they only read from closed-over arrays)
     isJobSaved:   (id: string) => savedJobIds.includes(id),
     isJobApplied: (id: string) => applications.some(a => a.jobId === id),
     getJobStatus: (id: string) => applications.find(a => a.jobId === id)?.status ?? null,
     getAppliedAt: (id: string) => applications.find(a => a.jobId === id)?.appliedAt ?? null,
 
     // actions
-    handleSearch:         (q: string)          => dispatch(setSearch(q)),
-    handleLocation:       (v: string)          => dispatch(setLocation(v)),
-    handleToggleType:     (t: JobType)          => dispatch(toggleFilterType(t)),
-    handleToggleExp:      (e: ExperienceLevel)  => dispatch(toggleFilterExperience(e)),
-    handleToggleWorkMode: (m: WorkMode)         => dispatch(toggleFilterWorkMode(m)),
-    handleToggleCategory: (c: string)           => dispatch(toggleFilterCategory(c)),
-    handleClearFilters:   ()                    => dispatch(clearFilters()),
-    handleToggleSave:     (id: string)          => dispatch(toggleSaveJob(id)),
-    handleApply:          (id: string)          => dispatch(applyToJob(id)),
-    handleUpdateStatus:   (jobId: string, status: ApplicationStatus) =>
-                            dispatch(updateApplicationStatus({ jobId, status })),
-    handleSetSection:     (s: SectionView)      => dispatch(setActiveSection(s)),
+    handleSearch, handleLocation,
+    handleToggleType, handleToggleExp, handleToggleWorkMode, handleToggleCategory,
+    handleClearFilters, handleToggleSave, handleApply, handleUpdateStatus, handleSetSection,
   }
 }

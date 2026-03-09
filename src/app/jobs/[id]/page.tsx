@@ -1,27 +1,14 @@
 'use client'
-import { useState } from 'react'
+import { useState, memo } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { useAppSelector } from '@/store'
 import { selectJobById, selectSavedJobIds, selectAppliedJobIds } from '@/store/slices/jobsSlice'
 import { useJobs } from '@/hooks/useJobs'
 import { ApplicationModal } from '../components/ApplicationModal'
+import { LOGO_BG, WORK_MODE_STYLE, formatSalary } from '@/types/jobConstants'
 
-const LOGO_BG: Record<string, string> = {
-  T8: '#4a3728', NL: '#2d4a6b', OR: '#7a3d1a',
-  DC: '#1a5c3a', FM: '#6b1a3a', PL: '#1a4a6b',
-  LC: '#6b4a1a', ST: '#3a3a3a',
-}
-
-const WORK_MODE_STYLE: Record<string, string> = {
-  remote: 'bg-emerald-50 text-emerald-700 border-emerald-200',
-  hybrid: 'bg-amber-50   text-amber-700   border-amber-200',
-  onsite: 'bg-rose-50    text-rose-700    border-rose-200',
-}
-
-const fmt = (n: number) => `$${Math.round(n / 1000)}k`
-
-function BulletList({ items, color }: { items: string[]; color: string }) {
+const BulletList = memo(function BulletList({ items, color }: { items: string[]; color: string }) {
   return (
     <ul className="space-y-2.5">
       {items.map((item, i) => (
@@ -32,7 +19,7 @@ function BulletList({ items, color }: { items: string[]; color: string }) {
       ))}
     </ul>
   )
-}
+})
 
 export default function JobDetailPage() {
   const { id }            = useParams<{ id: string }>()
@@ -49,9 +36,7 @@ export default function JobDetailPage() {
       <div className="min-h-screen bg-[#f7f3ef] flex items-center justify-center">
         <div className="text-center">
           <p className="text-[#4a3728] font-semibold text-lg mb-2">Job not found</p>
-          <Link href="/jobs" className="text-[#6b5847] hover:text-[#4a3728] text-sm transition-colors">
-            ← Back to jobs
-          </Link>
+          <Link href="/jobs" className="text-[#6b5847] hover:text-[#4a3728] text-sm transition-colors">← Back to jobs</Link>
         </div>
       </div>
     )
@@ -62,32 +47,23 @@ export default function JobDetailPage() {
 
   return (
     <div className="min-h-screen bg-[#f7f3ef]">
-
-      <header className="sticky top-0 z-50 border-b border-[#d4c4b5] bg-[#f7f3ef]/90 backdrop-blur-xl">
-        <div className="max-w-5xl mx-auto px-6 h-14 flex items-center gap-4">
-          <button onClick={() => router.back()}
-            className="flex items-center gap-2 text-[#6b5847] hover:text-[#4a3728] transition-colors text-sm font-medium">
+      <header className="sticky top-14 z-40 border-b border-[#d4c4b5] bg-[#f7f3ef]/90 backdrop-blur-xl">
+        <div className="max-w-5xl mx-auto px-6 h-12 flex items-center gap-4">
+          <button onClick={() => router.back()} className="flex items-center gap-2 text-[#6b5847] hover:text-[#4a3728] transition-colors text-sm font-medium">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
             Back
           </button>
           <div className="h-4 w-px bg-[#d4c4b5]" />
-          <Link href="/jobs" className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-md bg-[#4a3728] flex items-center justify-center">
-              <span className="text-[#e0d8cf] font-black text-[9px]">T8</span>
-            </div>
-            <span className="text-[#6b5847] text-sm font-medium">throne8 / Jobs</span>
-          </Link>
+          <span className="text-[#6b5847] text-sm font-medium">{job.company} — {job.title}</span>
         </div>
       </header>
 
       <main className="max-w-5xl mx-auto px-6 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-          {/* Left: content */}
           <div className="lg:col-span-2 space-y-4">
-
             <div className="bg-white border border-[#d4c4b5] rounded-2xl p-6 shadow-sm">
               <div className="flex items-start gap-4">
                 <div className="w-14 h-14 rounded-xl flex items-center justify-center text-white font-black text-base shrink-0"
@@ -105,24 +81,18 @@ export default function JobDetailPage() {
                   </p>
                 </div>
               </div>
-
               <div className="mt-4 flex flex-wrap gap-2">
                 <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs border font-semibold ${WORK_MODE_STYLE[job.workMode]}`}>
                   <span className="w-1.5 h-1.5 rounded-full bg-current" />
                   {job.workMode.charAt(0).toUpperCase() + job.workMode.slice(1)}
                 </span>
-                {[job.type, `${job.experience} level`, `${job.applicants} applicants`].map((t) => (
-                  <span key={t} className="px-3 py-1 rounded-full text-xs bg-[#f7f3ef] border border-[#d4c4b5] text-[#6b5847] font-semibold capitalize">
-                    {t}
-                  </span>
+                {[job.type, `${job.experience} level`, `${job.applicants} applicants`].map(t => (
+                  <span key={t} className="px-3 py-1 rounded-full text-xs bg-[#f7f3ef] border border-[#d4c4b5] text-[#6b5847] font-semibold capitalize">{t}</span>
                 ))}
               </div>
-
               <div className="mt-3 flex flex-wrap gap-1.5">
-                {job.tags.map((tag) => (
-                  <span key={tag} className="px-2.5 py-1 rounded-lg text-xs bg-[#e0d8cf]/50 text-[#4a3728] border border-[#d4c4b5] font-medium">
-                    {tag}
-                  </span>
+                {job.tags.map(tag => (
+                  <span key={tag} className="px-2.5 py-1 rounded-lg text-xs bg-[#e0d8cf]/50 text-[#4a3728] border border-[#d4c4b5] font-medium">{tag}</span>
                 ))}
               </div>
             </div>
@@ -133,7 +103,7 @@ export default function JobDetailPage() {
               { title: 'Requirements',     body: <BulletList items={job.requirements} color="bg-[#6b5847]" /> },
               { title: 'Benefits & Perks', body: (
                 <div className="grid grid-cols-2 gap-2">
-                  {job.benefits.map((b) => (
+                  {job.benefits.map(b => (
                     <div key={b} className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-[#f7f3ef] border border-[#e8ddd4]">
                       <span className="text-[#4a3728] text-xs">✦</span>
                       <span className="text-sm text-[#4a3728] font-medium">{b}</span>
@@ -149,20 +119,15 @@ export default function JobDetailPage() {
             ))}
           </div>
 
-          {/* Right: sticky sidebar */}
-          <div className="sticky top-20 space-y-3 h-fit">
+          <div className="sticky top-28 space-y-3 h-fit">
             <div className="bg-white border border-[#d4c4b5] rounded-2xl p-5 shadow-sm">
               <p className="text-[#6b5847] text-xs font-medium uppercase tracking-widest mb-1">Compensation</p>
-              <p className="text-[#4a3728] font-black text-xl mb-4">{fmt(job.salary.min)} – {fmt(job.salary.max)} / yr</p>
-
+              <p className="text-[#4a3728] font-black text-xl mb-4">{formatSalary(job.salary.min, job.salary.max)} / yr</p>
               <button
                 onClick={() => !isApplied && setModal(true)}
                 disabled={isApplied}
                 className={`w-full py-3.5 rounded-xl font-bold text-sm transition-colors
-                  ${isApplied
-                    ? 'bg-emerald-50 text-emerald-700 border border-emerald-200 cursor-default'
-                    : 'bg-[#4a3728] hover:bg-[#3a2a1e] text-[#e0d8cf]'
-                  }`}
+                  ${isApplied ? 'bg-emerald-50 text-emerald-700 border border-emerald-200 cursor-default' : 'bg-[#4a3728] hover:bg-[#3a2a1e] text-[#e0d8cf]'}`}
               >
                 {isApplied
                   ? <span className="flex items-center justify-center gap-2">
@@ -174,18 +139,13 @@ export default function JobDetailPage() {
                   : 'Apply Now'
                 }
               </button>
-
               <button onClick={() => handleToggleSave(job.id)}
                 className={`w-full py-3 rounded-xl font-semibold text-sm mt-2 border transition-colors
-                  ${isSaved
-                    ? 'bg-[#4a3728]/[0.07] text-[#4a3728] border-[#4a3728]/20'
-                    : 'bg-white text-[#6b5847] border-[#d4c4b5] hover:text-[#4a3728] hover:border-[#4a3728]/30'
-                  }`}
+                  ${isSaved ? 'bg-[#4a3728]/[0.07] text-[#4a3728] border-[#4a3728]/20' : 'bg-white text-[#6b5847] border-[#d4c4b5] hover:text-[#4a3728] hover:border-[#4a3728]/30'}`}
               >
                 {isSaved ? '◈ Saved' : '◇ Save Job'}
               </button>
             </div>
-
             <div className="bg-white border border-[#d4c4b5] rounded-2xl p-5 shadow-sm">
               <h3 className="text-[#4a3728] font-bold text-sm mb-3">Job Details</h3>
               <dl className="space-y-3">
@@ -208,11 +168,7 @@ export default function JobDetailPage() {
       </main>
 
       {modal && (
-        <ApplicationModal
-          job={job}
-          onSubmit={() => { handleApply(job.id); setModal(false) }}
-          onClose={() => setModal(false)}
-        />
+        <ApplicationModal job={job} onSubmit={() => { handleApply(job.id); setModal(false) }} onClose={() => setModal(false)} />
       )}
     </div>
   )

@@ -1,7 +1,8 @@
 'use client'
 import Link from 'next/link'
+import { memo } from 'react'
 
-export function Navbar() {
+export const Navbar = memo(function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-[#d4c4b5] bg-[#f7f3ef]/90 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
@@ -19,4 +20,4 @@ export function Navbar() {
       </div>
     </header>
   )
-}
+})

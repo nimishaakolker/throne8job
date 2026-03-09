@@ -11,7 +11,7 @@ module.exports = {
         'slide-up': 'slideUp 0.3s ease',
       },
       keyframes: {
-        fadeIn:  { from: { opacity: '0' },                              to: { opacity: '1' } },
+        fadeIn:  { from: { opacity: '0' },                               to: { opacity: '1' } },
         slideUp: { from: { opacity: '0', transform: 'translateY(8px)' }, to: { opacity: '1', transform: 'translateY(0)' } },
       },
     },

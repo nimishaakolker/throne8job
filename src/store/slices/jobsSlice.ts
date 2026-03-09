@@ -6,20 +6,14 @@ import {
 import { MOCK_JOBS } from '@/lib/mockData'
 
 const defaultFilters: FilterState = {
-  search:     '',
-  types:      [],
-  experience: [],
-  workMode:   [],
-  categories: [],
-  salaryMin:  0,
-  salaryMax:  500000,
-  location:   '',
+  search: '', types: [], experience: [], workMode: [],
+  categories: [], salaryMin: 0, salaryMax: 500000, location: '',
 }
 
 const initialState: JobsState = {
-  jobs:         MOCK_JOBS,
-  filteredJobs: MOCK_JOBS,
-  savedJobs:    ['2', '5'],
+  jobs:          MOCK_JOBS,
+  filteredJobs:  MOCK_JOBS,
+  savedJobs:     ['2', '5'],
   applications: [
     { jobId: '1', status: 'interview', appliedAt: '2025-02-20T10:00:00Z', updatedAt: '2025-03-01T09:00:00Z' },
     { jobId: '4', status: 'reviewing', appliedAt: '2025-02-28T14:00:00Z', updatedAt: '2025-03-02T11:00:00Z' },
@@ -41,7 +35,7 @@ function applyFilters(jobs: Job[], f: FilterState): Job[] {
         job.location.toLowerCase().includes(q)
       if (!hit) return false
     }
-    if (f.types.length      && !f.types.includes(job.type))           return false
+    if (f.types.length      && !f.types.includes(job.type))            return false
     if (f.experience.length && !f.experience.includes(job.experience)) return false
     if (f.workMode.length   && !f.workMode.includes(job.workMode))     return false
     if (f.categories.length && !f.categories.includes(job.category))   return false
@@ -134,21 +128,30 @@ export const selectAllJobs       = (s: { jobs: JobsState }) => s.jobs.jobs
 export const selectFilteredJobs  = (s: { jobs: JobsState }) => s.jobs.filteredJobs
 export const selectFilters       = (s: { jobs: JobsState }) => s.jobs.filters
 export const selectSavedJobIds   = (s: { jobs: JobsState }) => s.jobs.savedJobs
-export const selectAppliedJobIds = (s: { jobs: JobsState }) => s.jobs.applications.map(a => a.jobId)
 export const selectApplications  = (s: { jobs: JobsState }) => s.jobs.applications
 export const selectActiveSection = (s: { jobs: JobsState }) => s.jobs.activeSection
+export const selectAppliedJobIds = (s: { jobs: JobsState }) => s.jobs.applications.map(a => a.jobId)
 
-export const selectFeaturedJobs = createSelector(selectAllJobs,
-  jobs => jobs.filter(j => j.featured))
+// Memoized selectors — only recompute when inputs change
+export const selectFeaturedJobs = createSelector(
+  selectAllJobs,
+  jobs => jobs.filter(j => j.featured)
+)
 
-export const selectRecentJobs = createSelector(selectAllJobs,
-  jobs => [...jobs].sort((a, b) => new Date(b.postedAt).getTime() - new Date(a.postedAt).getTime()).slice(0, 6))
+export const selectRecentJobs = createSelector(
+  selectAllJobs,
+  jobs => [...jobs].sort((a, b) => new Date(b.postedAt).getTime() - new Date(a.postedAt).getTime()).slice(0, 6)
+)
 
-export const selectSavedJobObjects = createSelector(selectAllJobs, selectSavedJobIds,
-  (jobs, ids) => jobs.filter(j => ids.includes(j.id)))
+export const selectSavedJobObjects = createSelector(
+  selectAllJobs, selectSavedJobIds,
+  (jobs, ids) => jobs.filter(j => ids.includes(j.id))
+)
 
-export const selectAppliedJobObjects = createSelector(selectAllJobs, selectApplications,
-  (jobs, apps) => jobs.filter(j => apps.some(a => a.jobId === j.id)))
+export const selectAppliedJobObjects = createSelector(
+  selectAllJobs, selectApplications,
+  (jobs, apps) => jobs.filter(j => apps.some(a => a.jobId === j.id))
+)
 
 export const selectJobById = (id: string) =>
   createSelector(selectAllJobs, jobs => jobs.find(j => j.id === id))

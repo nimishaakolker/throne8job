@@ -18,7 +18,6 @@ export const STATUS_CFG: Record<ApplicationStatus, StatusConfig> = {
   withdrawn:  { label: 'Withdrawn',  color: 'text-zinc-500',    bg: 'bg-zinc-50',    border: 'border-zinc-200',    dot: 'bg-zinc-400'    },
 }
 
-// Ordered pipeline steps — excludes terminal statuses (rejected / withdrawn)
 export const APPLICATION_PIPELINE: ApplicationStatus[] = [
   'applied', 'reviewing', 'interview', 'assessment', 'offer',
 ]
@@ -35,12 +34,21 @@ export const WORK_MODE_STYLE: Record<string, string> = {
   onsite: 'bg-rose-50    text-rose-700    border-rose-200',
 }
 
-export const formatSalary = (min: number, max: number) =>
+export const TYPE_LABEL: Record<string, string> = {
+  'full-time':  'Full-time',
+  'part-time':  'Part-time',
+  contract:     'Contract',
+  freelance:    'Freelance',
+  internship:   'Internship',
+}
+
+export const formatSalary = (min: number, max: number): string =>
   `$${Math.round(min / 1000)}k – $${Math.round(max / 1000)}k`
 
 export const timeAgo = (dateStr: string): string => {
   const days = Math.floor((Date.now() - new Date(dateStr).getTime()) / 86400000)
   if (days === 0) return 'Today'
   if (days === 1) return 'Yesterday'
-  return `${days}d ago`
+  if (days < 7)  return `${days}d ago`
+  return `${Math.floor(days / 7)}w ago`
 }

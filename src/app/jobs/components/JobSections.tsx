@@ -1,9 +1,12 @@
 'use client'
+import { memo } from 'react'
 import { useJobs } from '@/hooks/useJobs'
 import { Job } from '@/types/jobs'
 import { JobCard } from './JobCard'
 
-function SectionHeader({ title, count, badge }: { title: string; count?: number; badge?: string }) {
+const SectionHeader = memo(function SectionHeader({ title, count, badge }: {
+  title: string; count?: number; badge?: string
+}) {
   return (
     <div className="flex items-center gap-2.5 mb-4">
       <h2 className="text-[#4a3728] font-bold text-base">{title}</h2>
@@ -17,9 +20,11 @@ function SectionHeader({ title, count, badge }: { title: string; count?: number;
       )}
     </div>
   )
-}
+})
 
-function EmptyState({ icon, title, subtitle }: { icon: string; title: string; subtitle: string }) {
+const EmptyState = memo(function EmptyState({ icon, title, subtitle }: {
+  icon: string; title: string; subtitle: string
+}) {
   return (
     <div className="py-16 text-center">
       <p className="text-3xl mb-3">{icon}</p>
@@ -27,21 +32,18 @@ function EmptyState({ icon, title, subtitle }: { icon: string; title: string; su
       <p className="text-[#6b5847] text-sm mt-1">{subtitle}</p>
     </div>
   )
-}
+})
 
-function JobGrid({ jobs }: { jobs: Job[] }) {
+const JobGrid = memo(function JobGrid({ jobs }: { jobs: Job[] }) {
   return (
     <div className="grid grid-cols-1 xl:grid-cols-2 gap-3">
-      {jobs.map((job) => <JobCard key={job.id} job={job} />)}
+      {jobs.map(job => <JobCard key={job.id} job={job} />)}
     </div>
   )
-}
+})
 
-export function JobSections() {
-  const {
-    filteredJobs, featuredJobs, recentJobs,
-    activeSection, isFiltering,
-  } = useJobs()
+export const JobSections = memo(function JobSections() {
+  const { filteredJobs, featuredJobs, recentJobs, activeSection, isFiltering } = useJobs()
 
   if (isFiltering) {
     return (
@@ -64,10 +66,9 @@ export function JobSections() {
     )
   }
 
-  // Default: recommended view
-  const engineeringJobs = filteredJobs.filter((j) => j.category === 'Engineering').slice(0, 4)
-  const designJobs      = filteredJobs.filter((j) => j.category === 'Design').slice(0, 4)
-  const productJobs     = filteredJobs.filter((j) => j.category === 'Product').slice(0, 4)
+  const engineeringJobs = filteredJobs.filter(j => j.category === 'Engineering').slice(0, 4)
+  const designJobs      = filteredJobs.filter(j => j.category === 'Design').slice(0, 4)
+  const productJobs     = filteredJobs.filter(j => j.category === 'Product').slice(0, 4)
 
   return (
     <div className="space-y-8">
@@ -101,4 +102,4 @@ export function JobSections() {
       )}
     </div>
   )
-}
+})

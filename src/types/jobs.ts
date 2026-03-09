@@ -1,7 +1,7 @@
-export type JobType        = 'full-time' | 'part-time' | 'contract' | 'freelance' | 'internship'
+export type JobType         = 'full-time' | 'part-time' | 'contract' | 'freelance' | 'internship'
 export type ExperienceLevel = 'entry' | 'mid' | 'senior' | 'lead' | 'executive'
-export type WorkMode       = 'remote' | 'hybrid' | 'onsite'
-export type SectionView    = 'recommended' | 'recent'
+export type WorkMode        = 'remote' | 'hybrid' | 'onsite'
+export type SectionView     = 'recommended' | 'recent'
 
 export type ApplicationStatus =
   | 'applied'
@@ -27,25 +27,25 @@ export interface Salary {
 }
 
 export interface Job {
-  id:              string
-  title:           string
-  company:         string
-  companyLogo:     string
-  location:        string
-  salary:          Salary
-  type:            JobType
-  experience:      ExperienceLevel
-  workMode:        WorkMode
-  tags:            string[]
-  description:     string
+  id:               string
+  title:            string
+  company:          string
+  companyLogo:      string
+  location:         string
+  salary:           Salary
+  type:             JobType
+  experience:       ExperienceLevel
+  workMode:         WorkMode
+  tags:             string[]
+  description:      string
   responsibilities: string[]
-  requirements:    string[]
-  benefits:        string[]
-  postedAt:        string
-  deadline:        string
-  applicants:      number
-  featured:        boolean
-  category:        string
+  requirements:     string[]
+  benefits:         string[]
+  postedAt:         string
+  deadline:         string
+  applicants:       number
+  featured:         boolean
+  category:         string
 }
 
 export interface FilterState {
@@ -60,12 +60,12 @@ export interface FilterState {
 }
 
 export interface JobsState {
-  jobs:         Job[]
-  filteredJobs: Job[]
-  savedJobs:    string[]
-  applications: ApplicationRecord[]
-  filters:      FilterState
+  jobs:          Job[]
+  filteredJobs:  Job[]
+  savedJobs:     string[]
+  applications:  ApplicationRecord[]
+  filters:       FilterState
   activeSection: SectionView
-  loading:      boolean
-  error:        string | null
+  loading:       boolean
+  error:         string | null
 }
