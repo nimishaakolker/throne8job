@@ -1,7 +1,7 @@
 'use client'
 import { useJobs } from '@/hooks/useJobs'
 import { CATEGORIES } from '@/lib/mockData'
-import { JobType, ExperienceLevel, WorkMode, SectionView } from '@/types/jobs'
+import { JobType, ExperienceLevel, WorkMode } from '@/types/jobs'
 
 const JOB_TYPES: { value: JobType; label: string }[] = [
   { value: 'full-time',  label: 'Full-time'  },
@@ -11,24 +11,15 @@ const JOB_TYPES: { value: JobType; label: string }[] = [
 ]
 
 const EXPERIENCE_LEVELS: { value: ExperienceLevel; label: string }[] = [
-  { value: 'entry',     label: 'Entry Level' },
-  { value: 'mid',       label: 'Mid Level'   },
-  { value: 'senior',    label: 'Senior'      },
-
-
+  { value: 'entry',  label: 'Entry Level' },
+  { value: 'mid',    label: 'Mid Level'   },
+  { value: 'senior', label: 'Senior'      },
 ]
 
 const WORK_MODES: { value: WorkMode; label: string; dot: string }[] = [
   { value: 'remote', label: 'Remote',  dot: 'bg-emerald-500' },
   { value: 'hybrid', label: 'Hybrid',  dot: 'bg-amber-500'   },
   { value: 'onsite', label: 'On-site', dot: 'bg-rose-500'    },
-]
-
-const NAV_ITEMS: { id: SectionView; label: string; icon: string }[] = [
-  { id: 'recommended', label: 'Recommended', icon: '✦' },
-  { id: 'recent',      label: 'Recent',      icon: '◷' },
-  { id: 'saved',       label: 'Saved Jobs',  icon: '◈' },
-  { id: 'applied',     label: 'Applied',     icon: '◉' },
 ]
 
 function Checkbox({ label, checked, onChange, dot }: {
@@ -65,15 +56,16 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 
 export function FilterSidebar() {
   const {
-    filters, activeFilterCount, savedCount, appliedCount, activeSection,
+    filters, activeFilterCount,
     handleToggleType, handleToggleExp, handleToggleWorkMode,
-    handleToggleCategory, handleClearFilters, handleSetSection,
+    handleToggleCategory, handleClearFilters,
   } = useJobs()
 
   return (
     <aside className="w-60 shrink-0 sticky top-20 h-fit">
       <div className="bg-white border border-[#d4c4b5] rounded-2xl overflow-hidden shadow-sm">
 
+        {/* Header */}
         <div className="px-4 py-3.5 border-b border-[#e8ddd4] flex items-center justify-between">
           <div className="flex items-center gap-2">
             <svg className="w-4 h-4 text-[#4a3728]" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -93,31 +85,8 @@ export function FilterSidebar() {
           )}
         </div>
 
+        {/* Filter sections only — no navigation here */}
         <div className="px-2 overflow-y-auto max-h-[calc(100vh-200px)]">
-          <div className="py-3 border-b border-[#e8ddd4] space-y-0.5">
-            {NAV_ITEMS.map(({ id, label, icon }) => {
-              const count  = id === 'saved' ? savedCount : id === 'applied' ? appliedCount : null
-              const active = activeSection === id
-              return (
-                <button key={id} onClick={() => handleSetSection(id)}
-                  className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium transition-colors
-                    ${active ? 'bg-[#4a3728] text-[#e0d8cf]' : 'text-[#6b5847] hover:text-[#4a3728] hover:bg-[#e0d8cf]/40'}`}
-                >
-                  <span className="flex items-center gap-2">
-                    <span className="text-xs opacity-60">{icon}</span>
-                    {label}
-                  </span>
-                  {count !== null && count > 0 && (
-                    <span className={`text-xs px-1.5 py-0.5 rounded-full font-bold
-                      ${active ? 'bg-white/20 text-[#e0d8cf]' : 'bg-[#e0d8cf] text-[#4a3728]'}`}>
-                      {count}
-                    </span>
-                  )}
-                </button>
-              )
-            })}
-          </div>
-
           <Section title="Work Mode">
             {WORK_MODES.map((m) => (
               <Checkbox key={m.value} label={m.label} dot={m.dot}

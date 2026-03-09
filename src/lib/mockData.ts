@@ -1,8 +1,11 @@
 import { Job } from '@/types/jobs'
 
+// Must match the `category` field values used in MOCK_JOBS below
 export const CATEGORIES = [
-  'Web Development', 'Marketing'
-  
+  'Engineering',
+  'Design',
+  'Product',
+  'Marketing',
 ]
 
 export const MOCK_JOBS: Job[] = [

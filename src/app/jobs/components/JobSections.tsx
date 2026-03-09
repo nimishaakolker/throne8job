@@ -40,7 +40,6 @@ function JobGrid({ jobs }: { jobs: Job[] }) {
 export function JobSections() {
   const {
     filteredJobs, featuredJobs, recentJobs,
-    savedJobObjects, appliedJobObjects,
     activeSection, isFiltering,
   } = useJobs()
 
@@ -56,30 +55,6 @@ export function JobSections() {
     )
   }
 
-  if (activeSection === 'saved') {
-    return (
-      <div>
-        <SectionHeader title="Saved Jobs" count={savedJobObjects.length} />
-        {savedJobObjects.length === 0
-          ? <EmptyState icon="◈" title="No saved jobs yet" subtitle="Tap the bookmark on any job to save it here" />
-          : <JobGrid jobs={savedJobObjects} />
-        }
-      </div>
-    )
-  }
-
-  if (activeSection === 'applied') {
-    return (
-      <div>
-        <SectionHeader title="Applied Jobs" count={appliedJobObjects.length} />
-        {appliedJobObjects.length === 0
-          ? <EmptyState icon="◉" title="No applications yet" subtitle="Jobs you apply to will appear here" />
-          : <JobGrid jobs={appliedJobObjects} />
-        }
-      </div>
-    )
-  }
-
   if (activeSection === 'recent') {
     return (
       <div>
@@ -89,6 +64,7 @@ export function JobSections() {
     )
   }
 
+  // Default: recommended view
   const engineeringJobs = filteredJobs.filter((j) => j.category === 'Engineering').slice(0, 4)
   const designJobs      = filteredJobs.filter((j) => j.category === 'Design').slice(0, 4)
   const productJobs     = filteredJobs.filter((j) => j.category === 'Product').slice(0, 4)
