@@ -12,22 +12,22 @@ interface Props {
 
 export const StepRole = memo(function StepRole({ form, setField, addTag, removeTag }: Props) {
   return (
-    <div className="flex flex-col gap-6">
-      <h2 className="font-bold text-[#2d1f14] text-base border-b border-[#f0ece6] pb-4">
+    <div className="flex flex-col gap-4">
+      <h2 className="font-bold text-[#2d1f14] text-sm border-b border-[#f0ece6] pb-3">
         Role Details
       </h2>
 
-      <Field label="Job Title" required>
-        <input
-          className={inputCls}
-          value={form.title}
-          onChange={e => setField('title', e.target.value)}
-          placeholder="e.g. Senior Frontend Engineer"
-          autoComplete="off"
-        />
-      </Field>
-
-      <div className="grid grid-cols-2 gap-4">
+      {/* Title + Category side by side */}
+      <div className="grid grid-cols-2 gap-3">
+        <Field label="Job Title" required>
+          <input
+            className={inputCls}
+            value={form.title}
+            onChange={e => setField('title', e.target.value)}
+            placeholder="e.g. Senior Frontend Engineer"
+            autoComplete="off"
+          />
+        </Field>
         <Field label="Category" required>
           <select
             className={inputCls}
@@ -38,6 +38,10 @@ export const StepRole = memo(function StepRole({ form, setField, addTag, removeT
             {POST_JOB_CATEGORIES.map(c => <option key={c} value={c}>{c}</option>)}
           </select>
         </Field>
+      </div>
+
+      {/* Job Type + Work Mode side by side */}
+      <div className="grid grid-cols-2 gap-3">
         <Field label="Job Type">
           <select
             className={inputCls}
@@ -49,8 +53,17 @@ export const StepRole = memo(function StepRole({ form, setField, addTag, removeT
             ))}
           </select>
         </Field>
+        <Field label="Location" hint="or 'Worldwide'">
+          <input
+            className={inputCls}
+            value={form.location}
+            onChange={e => setField('location', e.target.value)}
+            placeholder="e.g. New York, NY"
+          />
+        </Field>
       </div>
 
+      {/* Work Mode */}
       <Field label="Work Mode" required>
         <ToggleGroup<WorkMode>
           options={WORK_MODE_OPTIONS}
@@ -59,19 +72,11 @@ export const StepRole = memo(function StepRole({ form, setField, addTag, removeT
         />
       </Field>
 
-      <Field label="Location" hint="City, State — or 'Worldwide' for fully remote">
-        <input
-          className={inputCls}
-          value={form.location}
-          onChange={e => setField('location', e.target.value)}
-          placeholder="e.g. New York, NY"
-        />
-      </Field>
-
+      {/* Salary */}
       <Field label="Salary Range" hint="Listings with salary get 40% more applications">
         <div className="flex items-center gap-2">
           <select
-            className={`${inputCls} w-[90px] shrink-0`}
+            className={`${inputCls} w-[80px] shrink-0`}
             value={form.currency}
             onChange={e => setField('currency', e.target.value)}
           >
@@ -100,8 +105,9 @@ export const StepRole = memo(function StepRole({ form, setField, addTag, removeT
         </div>
       </Field>
 
-      <Field label="Skills / Tags" hint="Press Enter or comma to add · Max 8 tags">
-        <div className="w-full min-h-[48px] px-3 py-2 rounded-xl border border-[#e8e0d6] bg-white
+      {/* Tags */}
+      <Field label="Skills / Tags" hint="Press Enter or comma · Max 8">
+        <div className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-[#e8e0d6] bg-white
           focus-within:border-[#4a3728] focus-within:ring-2 focus-within:ring-[#4a3728]/10
           transition-all flex flex-wrap gap-1.5 items-center">
           {form.tags.map(t => (

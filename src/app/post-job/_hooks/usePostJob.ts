@@ -1,6 +1,6 @@
 
 import { useCallback, useReducer } from 'react'
-import { JobPostForm, INITIAL_FORM, PostJobPlan, ApplyType, TOTAL_STEPS } from '../../_types/postJob'
+import { JobPostForm, INITIAL_FORM, PostJobPlan, ApplyType, TOTAL_STEPS } from '../_types/postJob'
 import { WorkMode, JobType } from '@/types/jobs'
 
 // ── Reducer — avoids stale closure issues with useState ───────────────────────

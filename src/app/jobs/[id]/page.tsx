@@ -47,7 +47,8 @@ export default function JobDetailPage() {
 
   return (
     <div className="min-h-screen bg-[#f7f3ef]">
-      <header className="sticky top-14 z-40 border-b border-[#d4c4b5] bg-[#f7f3ef]/90 backdrop-blur-xl">
+      {/* sticky top-0 so it sits flush under the main navbar which is also sticky */}
+      <header className="sticky top-0 z-40 border-b border-[#d4c4b5] bg-[#f7f3ef]/90 backdrop-blur-xl">
         <div className="max-w-5xl mx-auto px-6 h-12 flex items-center gap-4">
           <button onClick={() => router.back()} className="flex items-center gap-2 text-[#6b5847] hover:text-[#4a3728] transition-colors text-sm font-medium">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -119,7 +120,8 @@ export default function JobDetailPage() {
             ))}
           </div>
 
-          <div className="sticky top-28 space-y-3 h-fit">
+          {/* top-[104px] = 56px main navbar + 48px sub-navbar */}
+          <div className="sticky top-[48px] space-y-3 h-fit">
             <div className="bg-white border border-[#d4c4b5] rounded-2xl p-5 shadow-sm">
               <p className="text-[#6b5847] text-xs font-medium uppercase tracking-widest mb-1">Compensation</p>
               <p className="text-[#4a3728] font-black text-xl mb-4">{formatSalary(job.salary.min, job.salary.max)} / yr</p>
