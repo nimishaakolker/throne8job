@@ -3,6 +3,7 @@ import { memo, useMemo, useCallback } from 'react'
 import { useJobs } from '@/hooks/useJobs'
 import { Job } from '@/types/jobs'
 import { JobCard } from './JobCard'
+import { PremiumSection } from '../../jobs/_components/PremiumSection'
 
 // ── Sub-components ────────────────────────────────────────────────────────────
 const SectionHeader = memo(function SectionHeader({ title, count, badge }: {
@@ -35,8 +36,6 @@ const EmptyState = memo(function EmptyState({ icon, title, subtitle }: {
   )
 })
 
-// JobGrid receives savedIds + appliedIds + onSave — computes isSaved/isApplied per card
-// This means useJobs is called ONCE (in JobSections) not once per card
 const JobGrid = memo(function JobGrid({ jobs, savedIds, appliedIds, onSave }: {
   jobs:       Job[]
   savedIds:   string[]
@@ -67,20 +66,18 @@ export const JobSections = memo(function JobSections() {
     handleToggleSave,
   } = useJobs()
 
-  // Stable derived arrays — memoized so JobGrid doesn't get new refs on unrelated renders
-  const savedIds   = useMemo(() => savedJobObjects.map(j => j.id),    [savedJobObjects])
-  const appliedIds = useMemo(() => applications.map(a => a.jobId),    [applications])
-
-  // Stable callback — won't invalidate JobCard memo
+  const savedIds   = useMemo(() => savedJobObjects.map(j => j.id), [savedJobObjects])
+  const appliedIds = useMemo(() => applications.map(a => a.jobId), [applications])
   const handleSave = useCallback((id: string) => handleToggleSave(id), [handleToggleSave])
 
-  // Category sections — memoized, only recomputes when filteredJobs changes
   const engineeringJobs = useMemo(() => filteredJobs.filter(j => j.category === 'Engineering').slice(0, 4), [filteredJobs])
   const designJobs      = useMemo(() => filteredJobs.filter(j => j.category === 'Design').slice(0, 4),      [filteredJobs])
   const productJobs     = useMemo(() => filteredJobs.filter(j => j.category === 'Product').slice(0, 4),     [filteredJobs])
 
-  const gridProps = { savedIds, appliedIds, onSave: handleSave }
+  const gridProps    = { savedIds, appliedIds, onSave: handleSave }
+  const premiumProps = { ...gridProps, jobs: featuredJobs }
 
+  // ── Search/filter active — flat results only, no sections ──────────────────
   if (isFiltering) {
     return (
       <div>
@@ -93,6 +90,7 @@ export const JobSections = memo(function JobSections() {
     )
   }
 
+  // ── Recent tab ─────────────────────────────────────────────────────────────
   if (activeSection === 'recent') {
     return (
       <div>
@@ -102,18 +100,19 @@ export const JobSections = memo(function JobSections() {
     )
   }
 
+  // ── Recommended tab — premium section between recommended header and recent ─
   return (
     <div className="space-y-8">
-      {featuredJobs.length > 0 && (
-        <section>
-          <SectionHeader title="Recommended for You" count={featuredJobs.length} badge="✦ Curated" />
-          <JobGrid jobs={featuredJobs} {...gridProps} />
-        </section>
-      )}
+      {/* ① Premium / Featured — horizontal scroll, dark cards */}
+      <PremiumSection {...premiumProps} />
+
+      {/* ② Recently Posted */}
       <section>
         <SectionHeader title="Recently Posted" count={recentJobs.length} />
         <JobGrid jobs={recentJobs} {...gridProps} />
       </section>
+
+      {/* ③ Category sections */}
       {engineeringJobs.length > 0 && (
         <section>
           <SectionHeader title="Engineering Roles" count={engineeringJobs.length} />
