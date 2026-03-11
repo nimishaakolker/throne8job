@@ -38,6 +38,7 @@ export function SearchBar() {
       <div className="p-5">
         <div className="flex flex-col sm:flex-row gap-3">
 
+          {/* Search input */}
           <div className="flex-1 flex items-center gap-2.5 bg-[#f7f3ef] border border-[#d4c4b5] rounded-xl px-4 py-3
             focus-within:border-[#4a3728]/40 focus-within:bg-white transition-colors">
             <svg className="w-4 h-4 text-[#6b5847] shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -63,6 +64,7 @@ export function SearchBar() {
             )}
           </div>
 
+          {/* Location input */}
           <div className="sm:w-48 flex items-center gap-2.5 bg-[#f7f3ef] border border-[#d4c4b5] rounded-xl px-4 py-3
             focus-within:border-[#4a3728]/40 focus-within:bg-white transition-colors">
             <svg className="w-4 h-4 text-[#6b5847] shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -84,11 +86,12 @@ export function SearchBar() {
           </button>
         </div>
 
-        <div className="mt-3.5 flex items-center justify-between">
+        {/* Bottom row — count + popular */}
+        <div className="mt-3.5 flex flex-wrap items-center justify-between gap-2">
           <p className="text-sm text-[#6b5847]">
             <span className="text-[#4a3728] font-bold">{filteredJobs.length}</span> positions available
           </p>
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-1.5 flex-wrap">
             <span className="text-xs text-[#6b5847]/50">Popular:</span>
             {POPULAR.map((term) => (
               <button key={term} onClick={() => onPopular(term)}

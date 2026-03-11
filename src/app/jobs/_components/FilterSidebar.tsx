@@ -29,7 +29,7 @@ const Checkbox = memo(function Checkbox({ label, checked, onChange, dot }: {
   return (
     <button
       onClick={onChange}
-      className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-left transition-colors
+      className={`w-full flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-left transition-colors
         ${checked ? 'bg-[#4a3728]/[0.07] text-[#4a3728]' : 'text-[#6b5847] hover:text-[#4a3728] hover:bg-[#e0d8cf]/40'}`}
     >
       <div className={`w-4 h-4 rounded border flex items-center justify-center shrink-0 transition-colors
@@ -48,8 +48,8 @@ const Checkbox = memo(function Checkbox({ label, checked, onChange, dot }: {
 
 const Section = memo(function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="py-4 border-b border-[#e8ddd4] last:border-0">
-      <p className="text-[10px] font-bold tracking-widest text-[#6b5847] uppercase mb-2 px-1">{title}</p>
+    <div className="py-3 border-b border-[#e8ddd4] last:border-0">
+      <p className="text-[10px] font-bold tracking-widest text-[#6b5847] uppercase mb-1.5 px-1">{title}</p>
       <div className="space-y-0.5">{children}</div>
     </div>
   )
@@ -63,9 +63,9 @@ export const FilterSidebar = memo(function FilterSidebar() {
   } = useJobs()
 
   return (
-    <aside className="w-60 shrink-0 sticky top-[104px] h-fit">
+    // On desktop: fixed width sidebar. On mobile: full width inside drawer
+    <aside className="lg:w-60 lg:shrink-0 lg:sticky lg:top-[104px] lg:h-fit w-full">
       <div className="bg-white border border-[#d4c4b5] rounded-2xl overflow-hidden shadow-sm">
-
         <div className="px-4 py-3.5 border-b border-[#e8ddd4] flex items-center justify-between">
           <div className="flex items-center gap-2">
             <svg className="w-4 h-4 text-[#4a3728]" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -85,7 +85,7 @@ export const FilterSidebar = memo(function FilterSidebar() {
           )}
         </div>
 
-        <div className="px-2 overflow-y-auto max-h-[calc(100vh-200px)]">
+        <div className="px-2 overflow-y-auto max-h-[calc(100vh-200px)] lg:max-h-[calc(100vh-200px)]">
           <Section title="Work Mode">
             {WORK_MODES.map(m => (
               <Checkbox key={m.value} label={m.label} dot={m.dot}

@@ -8,9 +8,12 @@ export default function JobsPage() {
     <div className="min-h-screen bg-[#f7f3ef]">
       <HeroSection />
       <JobsTopNav />
-      <main className="max-w-7xl mx-auto px-6 py-8">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
         <div className="flex gap-6 items-start">
-          <FilterSidebar />
+          {/* Sidebar — hidden on mobile, shown on lg+ */}
+          <div className="hidden lg:block">
+            <FilterSidebar />
+          </div>
           <div className="flex-1 min-w-0">
             <JobSections />
           </div>

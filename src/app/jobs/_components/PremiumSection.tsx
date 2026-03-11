@@ -26,12 +26,7 @@ export const PremiumSection = memo(function PremiumSection({ jobs, savedIds, app
             {jobs.length}
           </span>
         </div>
-        <Link
-          href="/jobs?filter=featured"
-          className="text-xs font-semibold text-[#6b5847] hover:text-[#2d1f14] transition-colors"
-        >
-          View all →
-        </Link>
+        
       </div>
 
       {/* Horizontal scroll row */}
