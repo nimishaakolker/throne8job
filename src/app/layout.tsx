@@ -28,7 +28,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={inter.variable}>
       <body className="antialiased">
         <ReduxProvider>
-          {/* pb-16 on mobile so content isn't hidden behind bottom nav */}
           <div className="md:pb-0 pb-16">
             {children}
           </div>

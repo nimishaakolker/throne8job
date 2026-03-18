@@ -64,7 +64,7 @@ export const FilterSidebar = memo(function FilterSidebar() {
 
   return (
     // On desktop: fixed width sidebar. On mobile: full width inside drawer
-    <aside className="lg:w-60 lg:shrink-0 lg:sticky lg:top-[104px] lg:h-fit w-full">
+    <aside className="w-full">
       <div className="bg-white border border-[#d4c4b5] rounded-2xl overflow-hidden shadow-sm">
         <div className="px-4 py-3.5 border-b border-[#e8ddd4] flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -85,7 +85,7 @@ export const FilterSidebar = memo(function FilterSidebar() {
           )}
         </div>
 
-        <div className="px-2 overflow-y-auto max-h-[calc(100vh-200px)] lg:max-h-[calc(100vh-200px)]">
+        <div className="px-2 overflow-y-auto hide-scrollbar max-h-[calc(100vh-200px)] lg:max-h-[calc(100vh-80px)]">
           <Section title="Work Mode">
             {WORK_MODES.map(m => (
               <Checkbox key={m.value} label={m.label} dot={m.dot}

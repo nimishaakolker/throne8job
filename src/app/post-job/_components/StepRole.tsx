@@ -53,12 +53,12 @@ export const StepRole = memo(function StepRole({ form, setField, addTag, removeT
             ))}
           </select>
         </Field>
-        <Field label="Location" hint="or 'Worldwide'">
+        <Field label="Location">
           <input
             className={inputCls}
             value={form.location}
             onChange={e => setField('location', e.target.value)}
-            placeholder="e.g. New York, NY"
+            placeholder="e.g. Bhopal"
           />
         </Field>
       </div>

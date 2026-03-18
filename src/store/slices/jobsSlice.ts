@@ -143,6 +143,12 @@ export const selectRecentJobs = createSelector(
   jobs => [...jobs].sort((a, b) => new Date(b.postedAt).getTime() - new Date(a.postedAt).getTime()).slice(0, 6)
 )
 
+// Recommended = non-featured jobs sorted by applicants (popularity), up to 6
+export const selectRecommendedJobs = createSelector(
+  selectAllJobs,
+  jobs => [...jobs].filter(j => !j.featured).sort((a, b) => b.applicants - a.applicants).slice(0, 6)
+)
+
 export const selectSavedJobObjects = createSelector(
   selectAllJobs, selectSavedJobIds,
   (jobs, ids) => jobs.filter(j => ids.includes(j.id))

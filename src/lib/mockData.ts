@@ -1,6 +1,6 @@
 import { Job } from '@/types/jobs'
 
-export const CATEGORIES = ['Engineering', 'Design', 'Product', 'Marketing']
+export const CATEGORIES = ['Marketing', 'Web Development', 'Sales', 'HR']
 
 export const MOCK_JOBS: Job[] = [
   {

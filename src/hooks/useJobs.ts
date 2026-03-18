@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {
-  selectFilteredJobs, selectFeaturedJobs, selectRecentJobs,
+  selectFilteredJobs, selectFeaturedJobs, selectRecentJobs, selectRecommendedJobs,
   selectSavedJobObjects, selectAppliedJobObjects,
   selectSavedJobIds, selectApplications,
   selectFilters, selectActiveSection,
@@ -18,6 +18,7 @@ export function useJobs() {
   const filteredJobs      = useSelector(selectFilteredJobs)
   const featuredJobs      = useSelector(selectFeaturedJobs)
   const recentJobs        = useSelector(selectRecentJobs)
+  const recommendedJobs   = useSelector(selectRecommendedJobs)
   const savedJobObjects   = useSelector(selectSavedJobObjects)
   const appliedJobObjects = useSelector(selectAppliedJobObjects)
   const applications      = useSelector(selectApplications)
@@ -52,7 +53,7 @@ export function useJobs() {
 
   return {
     // state
-    filters, filteredJobs, featuredJobs, recentJobs,
+    filters, filteredJobs, featuredJobs, recentJobs, recommendedJobs,
     savedJobObjects, appliedJobObjects, applications,
     activeSection, isFiltering, activeFilterCount,
     savedCount:   savedJobObjects.length,
